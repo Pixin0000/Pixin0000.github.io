@@ -1,0 +1,327 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>作業練習1</title>
+    <style type="text/css">
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #box {
+            width: 800px;
+            height: 600px;
+            margin: 200px;
+            border: solid 1px black;
+            position: absolute;
+            left: 400px;
+            top: 0px;
+        }
+
+        .title {
+            height: 40px;
+            background-color: red;
+        }
+
+            .title a {
+                color: white;
+                text-decoration: none;
+                width: 600px;
+                font-size: 25px;
+                height: 30px;
+                line-height: 35px;
+                float: left;
+                text-align: center;
+                margin-left: 100px;
+                margin-bottom: -10px;
+            }
+
+        .pic {
+            width: 800px;
+            height: 530px;
+            display: block;
+        }
+
+        #bt1 {
+            margin: 0px;
+            position: absolute;
+            left: 739px;
+            top: 300px;
+            background-color: aqua;
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        #bt2 {
+            position: absolute;
+            left: 0px;
+            top: 300px;
+            background-color: aqua;
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        .smallpic {
+            width: 150px;
+            height: 100px;
+            position: absolute;
+            left: 335px;
+            top: 470px;
+            display: none;
+        }
+
+        .sub {
+            height: 30px;
+            background-color: rgba(260,30,600,0.5);
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .sub ul {
+            text-decoration: none;
+        }
+
+            .sub ul li {
+                width: 40px;
+                text-align: center;
+                float: left;
+            }
+
+        .subtitle {
+            position: absolute;
+            left: 0px;
+            top: 540px;
+            background-color: rgba(200,200,200,0.8);
+            height: 30px;
+            width: 800px;
+            text-align: center;
+            font-size: 30px;
+            line-height: 30px;
+            color: yellow;
+            display: none;
+        }
+
+        .sub ul li span {
+            font-size: 25px;
+            width: 30px;
+            margin-left: 268px;
+            font-family: "微軟正黑體";
+            height: 30px;
+            line-height: 30px;
+            background-color: black;
+            color: white;
+            border-radius: 15px; /* 設置背景圓圈 */
+            display: inline-block; /* 可以設置寬度及高度 */
+        }
+
+        a {
+            text-decoration: none;
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+    <!-- 設置外框 -->
+    <div id='box'>
+        <div class='title'>
+            <!-- 上排標題 -->
+            <a href="#"></a>
+        </div>
+        <img class='pic' src='photo/img-1.jpg'><!-- 圖片 -->
+        </img>
+        <div id='bt1' type='button'><a href="#">下一頁</a></div><!-- 按鈕1 -->
+        <div id='bt2' type='button'><a href="#">上一頁</a></div><!-- 按鈕2 -->
+        <img class='smallpic' src='photo/img-1.jpg'><!-- 小圖片 -->
+        </img>
+        <div class='subtitle'>陽菜在天空</div>
+        <div class='sub'>
+            <!-- 下排標題 -->
+            <ul>
+                <li><span>1</span></li>
+                <li><span>2</span></li>
+                <li><span>3</span></li>
+                <li><span>4</span></li>
+                <li><span>5</span></li>
+                <li><span>6</span></li>
+                <li><span>7</span></li>
+            </ul>
+            </span>
+        </div>
+        <script>
+        //外框
+        var obox = document.getElementById('box');
+        //標題欄位
+        var otitle = obox.getElementsByClassName('title')[0];
+        //欄位中的文字
+        var otext = otitle.getElementsByTagName('a')[0];
+        // 圖片
+        var opic = obox.getElementsByClassName('pic')[0];
+        var osmallpic = obox.getElementsByClassName('smallpic')[0];
+        var osubtitle = obox.getElementsByClassName('subtitle')[0];
+        // 兩個按鈕 bt1下一張 bt2上一張
+        var obt1 = document.getElementById('bt1');
+        var obt2 = document.getElementById('bt2');
+        //下標題
+        var osub = obox.getElementsByClassName('sub')[0];
+        //下標題中的元素
+        var oul = osub.getElementsByTagName('ul')[0];
+        var ospan = osub.getElementsByTagName('span');
+
+
+        //設置變數
+        var index=0;
+        //製造項目
+        var otext_arr=[
+            '天氣之子01','天氣之子02','天氣之子03','天氣之子04','天氣之子05','天氣之子06','天氣之子07']
+        var opic_arr=[
+                     'img-1.jpg',
+                     'img-2.jpg',
+                     'img-3.jpg',
+                     'img-4.jpg',
+                     'img-5.jpg',
+                     'img-6.jpg',
+                     'img-7.jpg'
+                    ];
+        var osmallpic_arr =
+                    [
+                     'img-1.jpg',
+                     'img-2.jpg',
+                     'img-3.jpg',
+                     'img-4.jpg',
+                     'img-5.jpg',
+                     'img-6.jpg',
+                     'img-7.jpg'
+                    ];
+        var osubtitle_arr=
+                    [
+                    '陽菜在天空',
+                    '陽菜在祈禱',
+                    '在看台上祈禱',
+                    '海報封面圖',
+                    '雨傘風景圖',
+                    '黃昏之時相遇',
+                    '放棄了音樂專輯圖'
+                    ]
+
+        opic.src="photo/"+opic_arr[index];
+        osmallpic.src="photo/"+osmallpic_arr[index];
+        otext.innerHTML=otext_arr[index];
+        osubtitle.innerHTML=osubtitle_arr[index];
+        // 下一張
+        obt1.onclick = function()
+        {
+            for(line=0;line<ospan.length;line++)//樣式清空
+            ospan[line].style.background='black';
+            index++;
+
+            if(index>=7)
+            {
+                index=0;
+                ospan[6].style.background='black'
+                ospan[0].style.background='gray'
+            }
+            opic.src="photo/"+opic_arr[index];
+            osmallpic.src="photo/"+osmallpic_arr[index];
+            otext.innerHTML=otext_arr[index];
+            ospan[index-1].style.background='black';
+            ospan[index].style.background='gray';
+        }
+        // 上一張
+        obt2.onclick = function()
+        {
+            for(line=0;line<ospan.length;line++)
+            ospan[line].style.background='black';
+            index--;
+            if(index==-1)
+            {
+                index=6;
+                ospan[0].style.background='black'
+                ospan[6].style.background='gray'
+            }
+            opic.src="photo/"+opic_arr[index];
+            osmallpic.src="photo/"+osmallpic_arr[index];
+            otext.innerHTML=otext_arr[index];
+            ospan[index+1].style.background='black'
+            ospan[index].style.background='gray'
+
+        }
+        // 設置下方標題屬性
+        for(var i=0;i<ospan.length;i++)
+        {
+            //為每個按鈕設置數字
+
+            ospan[i].index = i;
+            ospan[i].onclick = function()
+            {
+
+                for(var j=0;j<opic_arr.length;j++)
+                {
+                    opic.src="photo/"+opic_arr[j];
+                    otext.innerHTML=otext_arr[j];
+                    ospan[j].style.background="black"
+                }
+                    ospan[this.index].style.background='grey'
+                    opic.src="photo/"+opic_arr[this.index];
+                    otext.innerHTML=otext_arr[this.index];
+                    index = this.index;
+
+
+            }
+            ospan[i].onmouseover = function()
+            {
+
+                for (var k=0;k<osmallpic_arr.length;k++)
+
+                {
+                    osmallpic.src="photo/"+osmallpic_arr[k];
+                }
+                    osmallpic.style.display="block";
+                    osmallpic.src="photo/"+osmallpic_arr[this.index];
+            }
+
+
+            ospan[i].onmouseout = function()
+            {
+
+                for (var a=0;a<osmallpic_arr.length;a++)
+
+                {
+                    osmallpic.src="photo/"+osmallpic_arr[a];
+                }
+                    osmallpic.style.display="none";
+                    osmallpic.src="photo/"+osmallpic_arr[this.index];}
+        }
+
+
+            opic.onmouseover = function(){
+                   for (var b=0;b<osubtitle_arr.length;b++)
+                {
+                    osubtitle.innerHTML = osubtitle_arr[b];
+                }
+                    osubtitle.style.display='block';
+                    osubtitle.innerHTML=osubtitle_arr[index];
+
+
+                }
+
+
+
+            opic.onmouseout = function()
+                {
+                    for (var c=0;c<osubtitle_arr.length;c++)
+                {
+                    osubtitle.innerHTML = osubtitle_arr[c];
+                }
+                    osubtitle.style.display='none';
+
+
+                }
+
+
+
+        </script>
+</body>
+</html>
