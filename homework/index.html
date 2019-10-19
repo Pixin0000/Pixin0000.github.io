@@ -117,64 +117,9 @@
         }
         
         </style>
-        <script src="jquery.js"></script>
-        <script>
-        $(function(){
-            //設置時間
-            var timer = 0;
-            var index = 0;
-            var number = 0;
-            start();//調用開始函數
-            //設定關閉
-            obt1.onclick = function(){
-                stop();
-            }
-            obt2.onclick = function(){
-                timer=0;
-                start();
-            }
-            ospan.onclick = function(){
-                stop();
-            }
-            //開始變更圖片
-            function start(){
-                if(timer != null){
-                    setInterval(plus,1000);
-                }
-            }
-            //暫停變更圖片
-            function stop(){
-                clearInterval(timer);
-                timer = null;
-            }
-            function plus(){
-                timer++;
-                console.log(timer);
-                if(timer>=7){
-                    timer=0;
-                }
-                //物件隨時間切換
-                opic.src="photo/"+opic_arr[timer];
-                osmallpic.src="photo/"+osmallpic_arr[timer+1];
-                otext.innerHTML=otext_arr[timer];
-                osubtitle.innerHTML=osubtitle_arr[timer];
-                osmallpic.style.display = "block"
-                osubtitle.style.display = "block"
-                
-                for(line=0;line<ospan.length;line++)//樣式清空
-                {
-                    ospan[line].style.background='black';
-                }
-                ospan[timer].style.background='gray'
-                if(timer==6){
-                    ospan[timer].style.background='gray'
-                    osmallpic.src = "photo/"+osmallpic_arr[0];
-                }
-            }
-        })
+
         
-        
-        </script>
+
 </head>
 <body>
     <!-- 設置外框 -->
@@ -386,7 +331,58 @@
                 
                 }
 
-            
+             //設置時間
+            var timer = 0;
+            var index = 0;
+            var number = 0;
+            start();//調用開始函數
+            //設定關閉
+            obt1.onclick = function(){
+                stop();
+            }
+            obt2.onclick = function(){
+                timer=0;
+                start();
+            }
+            ospan.onclick = function(){
+                stop();
+            }
+            //開始變更圖片
+            function start(){
+                if(timer != null){
+                    setInterval(plus,1000);
+                }
+            }
+            //暫停變更圖片
+            function stop(){
+                clearInterval(timer);
+                timer = null;
+            }
+            function plus(){
+                timer++;
+                console.log(timer);
+                if(timer>=7){
+                    timer=0;
+                }
+                //物件隨時間切換
+                opic.src="photo/"+opic_arr[timer];
+                osmallpic.src="photo/"+osmallpic_arr[timer+1];
+                otext.innerHTML=otext_arr[timer];
+                osubtitle.innerHTML=osubtitle_arr[timer];
+                osmallpic.style.display = "block"
+                osubtitle.style.display = "block"
+                
+                for(line=0;line<ospan.length;line++)//樣式清空
+                {
+                    ospan[line].style.background='black';
+                }
+                ospan[timer].style.background='gray'
+                if(timer==6){
+                    ospan[timer].style.background='gray'
+                    osmallpic.src = "photo/"+osmallpic_arr[0];
+                }
+            }
+
             
         
     </script>
