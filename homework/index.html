@@ -95,6 +95,7 @@
             line-height: 30px;
             color:yellow;
             display: none;
+            cursor: pointer;
             
         }
         .sub ul li span
@@ -115,14 +116,42 @@
             text-decoration:none;
             color:purple;
         }
+        #start{
+            position:absolute;
+            left:600px;
+            top:100px;
+            width:60px;
+            height:30px;
+            color:white;
+            background-color: rgba(2, 110, 101, 0.5);
+            font-size: 30px;
+            line-height: 30px;
+        }
+        #stop{
+            position:absolute;
+            left:1340px;
+            top:100px;
+            width:60px;
+            height:30px;
+            background-color:rgba(2, 110, 101, 0.5);
+            font-size: 30px;
+            line-height: 30px;
+        }
+        .st a{
+            color:rgb(22, 121, 9,0.8);
+        }
         
         </style>
-
         
-
+        
 </head>
 <body>
     <!-- 設置外框 -->
+    <!-- 設置暫停及開始按鈕 -->
+    <div class="st">
+    <div id='start'><a href="##">開始</a></div>
+    <div id='stop'><a href="##">結束</a></div>
+    </div>
     <div id='box'>
         <div class='title'><!-- 上排標題 -->
             <a href="##"></a>
@@ -167,10 +196,15 @@
         //下標題中的元素
         var oul = osub.getElementsByTagName('ul')[0];
         var ospan = osub.getElementsByTagName('span');
-        var num;
+        //start stop按鈕
+        var ostart = document.getElementById("start");
+        var ostop = document.getElementById("stop");
+        var num = 0;
 
         
-
+        opic.onmouseover = function(){
+            osubtitle.innerHTML = osubtitle_arr[0];
+        }
         //設置變數
         var index=0;
         //製造項目
@@ -228,6 +262,7 @@
             otext.innerHTML=otext_arr[index];
             ospan[index-1].style.background='black';
             ospan[index].style.background='gray';
+            num = index;
         }
         // 上一張
         obt2.onclick = function()
@@ -246,6 +281,7 @@
             otext.innerHTML=otext_arr[index];
             ospan[index+1].style.background='black'
             ospan[index].style.background='gray'
+            num = index;
             
         }
         // 設置下方標題屬性
@@ -312,6 +348,7 @@
                 }
                     osubtitle.style.display='block';
                     osubtitle.innerHTML  =  osubtitle_arr[num];
+                    
 
                     
                     
@@ -330,45 +367,39 @@
                     
                 
                 }
-
-             //設置時間
-            var timer = 0;
-            var index = 0;
-            var number = 0;
-            start();//調用開始函數
+            
+                var number = 0;
+            var index = -1 ;
             //設定關閉
-            obt1.onclick = function(){
-                stop();
-            }
-            obt2.onclick = function(){
-                timer=0;
+            ostart.onclick= function(){
                 start();
             }
-            ospan.onclick = function(){
+            ostop.onclick=function(){
                 stop();
             }
-            //開始變更圖片
             function start(){
-                if(timer != null){
+                    if(index != null){
                     setInterval(plus,1000);
-                }
+                    }
             }
             //暫停變更圖片
             function stop(){
-                clearInterval(timer);
-                timer = null;
+                    clearInterval(index);
+                    
             }
             function plus(){
-                timer++;
-                console.log(timer);
-                if(timer>=7){
-                    timer=0;
+                index++;
+                console.log(index);
+                num = this.index;
+                if(index>=7){
+                    index=0;
+                    osubtitle.innerHTML = osubtitle_arr[0];
                 }
                 //物件隨時間切換
-                opic.src="photo/"+opic_arr[timer];
-                osmallpic.src="photo/"+osmallpic_arr[timer+1];
-                otext.innerHTML=otext_arr[timer];
-                osubtitle.innerHTML=osubtitle_arr[timer];
+                opic.src="photo/"+opic_arr[index];
+                osmallpic.src="photo/"+osmallpic_arr[index+1];
+                otext.innerHTML = otext_arr[index]
+                osubtitle.innerHTML=osubtitle_arr[index];
                 osmallpic.style.display = "block"
                 osubtitle.style.display = "block"
                 
@@ -376,14 +407,12 @@
                 {
                     ospan[line].style.background='black';
                 }
-                ospan[timer].style.background='gray'
-                if(timer==6){
-                    ospan[timer].style.background='gray'
+                ospan[index].style.background='gray'
+                if(index==6){
+                    ospan[index].style.background='gray'
                     osmallpic.src = "photo/"+osmallpic_arr[0];
                 }
             }
-
-            
         
     </script>
 </body>
