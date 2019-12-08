@@ -139,7 +139,7 @@
             width: 60px;
             height: 30px;
             color: white;
-            background-color: rgba(2, 110, 101, 0.5);
+            background-color: rgba(231, 186, 102, 0.479);
             font-size: 30px;
             line-height: 30px;
         }
@@ -150,7 +150,8 @@
             top: 100px;
             width: 60px;
             height: 30px;
-            background-color: rgba(2, 110, 101, 0.5);
+            color:white;
+            background-color:rgba(231, 186, 102, 0.479);
             font-size: 30px;
             line-height: 30px;
         }
@@ -377,25 +378,23 @@
             var number = 0;
             var timer = null;
             var index = -1;
+            var time;
             //設定關閉
             ostart.onclick = function () {
                 start();
             }
+            
             ostop.onclick = function () {
+            //暫停變更圖片
+            clearInterval(timer);
+            timer = null;
+            osmallpic.style.display="none";
             }
             function start() {
                 if (timer == null) {
                     timer = setInterval(plus, 1000);
-                }
+             }
 
-            }
-            //暫停變更圖片
-            function stop() {
-                clearInterval(timer);
-                timer = null;
-
-
-            }
             function plus() {
                 index++;
                 console.log(index);
@@ -422,7 +421,7 @@
                     osmallpic.src = "photo/" + osmallpic_arr[0];
                 }
             }
-
+            }
 
         </script>
 </body>
