@@ -183,6 +183,6 @@ seventh:
 		printf("please try again\n");
 	}
 
-	system("PAUSE");
+	system("PAUSE");//程式暫停
 	return 0;
 }
