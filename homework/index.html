@@ -1,159 +1,181 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="utf-8" />
     <title>作業2</title>
-        <style type="text/css">
-        *{
-            padding:0px;
-            margin:0px;
+    <style type="text/css">
+        * {
+            padding: 0px;
+            margin: 0px;
         }
-        #box{
-            width:800px;
-            height:600px;
-            margin:200px ;
-            border:solid 1px black;
-            position:absolute;
-            left:400px;
-            top:0px;
-            }
-        .title{
-            height:40px;
-            background-color:red;
-            
-        }
-        .title a{
-            color:white;
-            text-decoration:none;
-            width:600px;
-            font-size:25px;
-            height:30px;
-            line-height:35px;
-            float:left;
-            text-align:center;
-            margin-left:100px;
-            margin-bottom:-10px;
-        }
-        .pic {
-            width:800px;
-            height:530px;
-            display:block;
-        }
-        #bt1{
-            margin:0px;
-            position:absolute;
-            left:739px;
-            top:300px;
-            background-color: aqua;
-            font-size:20px;
-            line-height:30px;
 
-
-        }
-        #bt2{
-            position:absolute;
-            left:0px;
-            top:300px;
-            background-color:aqua;
-            font-size:20px;
-            line-height:30px;
-        }
-        .smallpic{
-            width:150px;
-            height:100px;
+        #box {
+            width: 800px;
+            height: 600px;
+            margin: 200px;
+            border: solid 1px black;
             position: absolute;
-            left:335px;
-            top:470px;
-            display:none;
+            left: 400px;
+            top: 0px;
         }
-        .sub{
-            height:30px;
-            background-color: rgba(260,30,600,0.5);
-        }
-        li{
-            list-style:none;
+
+        .title {
+            height: 40px;
+            background-color: red;
 
         }
-        .sub ul{
-            text-decoration:none;
+
+        .title a {
+            color: white;
+            text-decoration: none;
+            width: 600px;
+            font-size: 25px;
+            height: 30px;
+            line-height: 35px;
+            float: left;
+            text-align: center;
+            margin-left: 100px;
+            margin-bottom: -10px;
         }
-        .sub ul li
-        {
-            width:40px;
-            text-align:center;
-            float:left;
+
+        .pic {
+            width: 800px;
+            height: 530px;
+            display: block;
         }
+
+        #bt1 {
+            margin: 0px;
+            position: absolute;
+            left: 739px;
+            top: 300px;
+            background-color: aqua;
+            font-size: 20px;
+            line-height: 30px;
+
+
+        }
+
+        #bt2 {
+            position: absolute;
+            left: 0px;
+            top: 300px;
+            background-color: aqua;
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        .smallpic {
+            width: 150px;
+            height: 100px;
+            position: absolute;
+            left: 335px;
+            top: 470px;
+            display: none;
+        }
+
+        .sub {
+            height: 30px;
+            background-color: rgba(260, 30, 600, 0.5);
+        }
+
+        li {
+            list-style: none;
+
+        }
+
+        .sub ul {
+            text-decoration: none;
+        }
+
+        .sub ul li {
+            width: 40px;
+            text-align: center;
+            float: left;
+        }
+
         .subtitle {
             position: absolute;
-            left:0px;
-            top:540px;
-            background-color: rgba(200,200,200,0.8);
-            height:30px;
-            width:800px;
+            left: 0px;
+            top: 540px;
+            background-color: rgba(200, 200, 200, 0.8);
+            height: 30px;
+            width: 800px;
             text-align: center;
-            font-size:30px;
+            font-size: 30px;
             line-height: 30px;
-            color:yellow;
+            color: yellow;
             display: none;
             cursor: pointer;
-            
+
         }
-        .sub ul li span
-        {
-         font-size:25px;
-         width:30px;
-         margin-left:268px;
-         font-family: "微軟正黑體";
-         height:30px;
-         line-height:30px;
-         background-color: black;
-         color:white;
-         border-radius:15px;/* 設置背景圓圈 */
-         display:inline-block;/* 可以設置寬度及高度 */
-         cursor: pointer;
+
+        .sub ul li span {
+            font-size: 25px;
+            width: 30px;
+            margin-left: 268px;
+            font-family: "微軟正黑體";
+            height: 30px;
+            line-height: 30px;
+            background-color: black;
+            color: white;
+            border-radius: 15px;
+            /* 設置背景圓圈 */
+            display: inline-block;
+            /* 可以設置寬度及高度 */
+            cursor: pointer;
         }
-        a{
-            text-decoration:none;
-            color:purple;
+
+        a {
+            text-decoration: none;
+            color: purple;
         }
-        #start{
-            position:absolute;
-            left:600px;
-            top:100px;
-            width:60px;
-            height:30px;
-            color:white;
+
+        #start {
+            position: absolute;
+            left: 600px;
+            top: 100px;
+            width: 60px;
+            height: 30px;
+            color: white;
             background-color: rgba(2, 110, 101, 0.5);
             font-size: 30px;
             line-height: 30px;
         }
-        #stop{
-            position:absolute;
-            left:1340px;
-            top:100px;
-            width:60px;
-            height:30px;
-            background-color:rgba(2, 110, 101, 0.5);
+
+        #stop {
+            position: absolute;
+            left: 1340px;
+            top: 100px;
+            width: 60px;
+            height: 30px;
+            background-color: rgba(2, 110, 101, 0.5);
             font-size: 30px;
             line-height: 30px;
         }
-        .st a{
-            color:rgb(22, 121, 9,0.8);
+
+        .st a {
+            color: rgb(22, 121, 9, 0.8);
         }
-        
-        </style>
-        
-        
+    </style>
+    <script src="jquery.js"></script>
+
+
+
+    </script>
 </head>
+
 <body>
     <!-- 設置外框 -->
     <!-- 設置暫停及開始按鈕 -->
     <div class="st">
-    <div id='start'><a href="##">開始</a></div>
-    <div id='stop'><a href="##">結束</a></div>
+        <div id='start'><a href="##">開始</a></div>
+        <div id='stop'><a href="##">結束</a></div>
     </div>
     <div id='box'>
-        <div class='title'><!-- 上排標題 -->
+        <div class='title'>
+            <!-- 上排標題 -->
             <a href="##"></a>
         </div>
         <img class='pic' src='photo/img-1.jpg'><!-- 圖片 -->
@@ -165,7 +187,8 @@
 
         </img>
         <div class='subtitle'>陽菜在天空</div>
-        <div class='sub'><!-- 下排標題 -->
+        <div class='sub'>
+            <!-- 下排標題 -->
             <ul>
                 <li><span>1</span></li>
                 <li><span>2</span></li>
@@ -174,63 +197,63 @@
                 <li><span>5</span></li>
                 <li><span>6</span></li>
                 <li><span>7</span></li>
-            </ul> 
-        </span>
-    </div>
-    <script>
-        //外框
-        var obox = document.getElementById('box');
-        //標題欄位
-        var otitle = obox.getElementsByClassName('title')[0];
-        //欄位中的文字
-        var otext = otitle.getElementsByTagName('a')[0];
-        // 圖片
-        var opic = obox.getElementsByClassName('pic')[0];
-        var osmallpic = obox.getElementsByClassName('smallpic')[0];
-        var osubtitle = obox.getElementsByClassName('subtitle')[0];
-        // 兩個按鈕 bt1下一張 bt2上一張
-        var obt1 = document.getElementById('bt1');
-        var obt2 = document.getElementById('bt2');
-        //下標題
-        var osub = obox.getElementsByClassName('sub')[0];
-        //下標題中的元素
-        var oul = osub.getElementsByTagName('ul')[0];
-        var ospan = osub.getElementsByTagName('span');
-        //start stop按鈕
-        var ostart = document.getElementById("start");
-        var ostop = document.getElementById("stop");
-        var num = 0;
+            </ul>
+            </span>
+        </div>
+        <script>
+            //外框
+            var obox = document.getElementById('box');
+            //標題欄位
+            var otitle = obox.getElementsByClassName('title')[0];
+            //欄位中的文字
+            var otext = otitle.getElementsByTagName('a')[0];
+            // 圖片
+            var opic = obox.getElementsByClassName('pic')[0];
+            var osmallpic = obox.getElementsByClassName('smallpic')[0];
+            var osubtitle = obox.getElementsByClassName('subtitle')[0];
+            // 兩個按鈕 bt1下一張 bt2上一張
+            var obt1 = document.getElementById('bt1');
+            var obt2 = document.getElementById('bt2');
+            //下標題
+            var osub = obox.getElementsByClassName('sub')[0];
+            //下標題中的元素
+            var oul = osub.getElementsByTagName('ul')[0];
+            var ospan = osub.getElementsByTagName('span');
+            //start stop按鈕
+            var ostart = document.getElementById("start");
+            var ostop = document.getElementById("stop");
+            var num = 0;
 
-        
-        opic.onmouseover = function(){
-            osubtitle.innerHTML = osubtitle_arr[0];
-        }
-        //設置變數
-        var index=0;
-        //製造項目
-        var otext_arr=[
-            '天氣之子01','天氣之子02','天氣之子03','天氣之子04','天氣之子05','天氣之子06','天氣之子07']
-        var opic_arr=[
-                     'img-1.jpg',
-                     'img-2.jpg',
-                     'img-3.jpg',
-                     'img-4.jpg',
-                     'img-5.jpg',
-                     'img-6.jpg',
-                     'img-7.jpg'
-                    ];
-        var osmallpic_arr = 
-                    [
-                     'img-1.jpg',
-                     'img-2.jpg',
-                     'img-3.jpg',
-                     'img-4.jpg',
-                     'img-5.jpg',
-                     'img-6.jpg',
-                     'img-7.jpg'
-                    ];
-        var osubtitle_arr=
-                    [
+
+            opic.onmouseover = function () {
+                osubtitle.innerHTML = osubtitle_arr[0];
+            }
+            //設置變數
+            var index = 0;
+            //製造項目
+            var otext_arr = [
+                '天氣之子01', '天氣之子02', '天氣之子03', '天氣之子04', '天氣之子05', '天氣之子06', '天氣之子07']
+            var opic_arr = [
+                'img-1.jpg',
+                'img-2.jpg',
+                'img-3.jpg',
+                'img-4.jpg',
+                'img-5.jpg',
+                'img-6.jpg',
+                'img-7.jpg'
+            ];
+            var osmallpic_arr =
+                [
+                    'img-1.jpg',
+                    'img-2.jpg',
+                    'img-3.jpg',
+                    'img-4.jpg',
+                    'img-5.jpg',
+                    'img-6.jpg',
+                    'img-7.jpg'
+                ];
+            var osubtitle_arr =
+                [
                     '陽菜在天空',
                     '陽菜在祈禱',
                     '在看台上祈禱',
@@ -238,182 +261,170 @@
                     '雨傘風景圖',
                     '黃昏之時相遇',
                     '放棄了音樂專輯圖'
-                    ]       
-                    
-        opic.src="photo/"+opic_arr[index];
-        osmallpic.src="photo/"+osmallpic_arr[index];
-        otext.innerHTML=otext_arr[index];
-        osubtitle.innerHTML=osubtitle_arr[index];
-        // 下一張
-        obt1.onclick = function()
-        {
-            for(line=0;line<ospan.length;line++)//樣式清空
-            ospan[line].style.background='black';
-            index++;
-            
-            if(index>=7)
-            {
-                index=0;
-                ospan[6].style.background='black'
-                ospan[0].style.background='gray'
-            }
-            opic.src="photo/"+opic_arr[index];
-            osmallpic.src="photo/"+osmallpic_arr[index];
-            otext.innerHTML=otext_arr[index];
-            ospan[index-1].style.background='black';
-            ospan[index].style.background='gray';
-            num = index;
-        }
-        // 上一張
-        obt2.onclick = function()
-        {
-            for(line=0;line<ospan.length;line++)
-            ospan[line].style.background='black';
-            index--;
-            if(index==-1)
-            {
-                index=6;
-                ospan[0].style.background='black'
-                ospan[6].style.background='gray'
-            }
-            opic.src="photo/"+opic_arr[index];
-            osmallpic.src="photo/"+osmallpic_arr[index];
-            otext.innerHTML=otext_arr[index];
-            ospan[index+1].style.background='black'
-            ospan[index].style.background='gray'
-            num = index;
-            
-        }
-        // 設置下方標題屬性
-        for(var i=0;i<ospan.length;i++)
-        {
-            //為每個按鈕設置數字
-            
-            ospan[i].index = i;
-            ospan[i].onclick = function()
-            {
-                
-                for(var j=0;j<opic_arr.length;j++)
-                {
-                    opic.src="photo/"+opic_arr[j];
-                    otext.innerHTML=otext_arr[j];
-                    ospan[j].style.background="black"
+                ]
+
+            opic.src = "photo/" + opic_arr[index];
+            osmallpic.src = "photo/" + osmallpic_arr[index];
+            otext.innerHTML = otext_arr[index];
+            osubtitle.innerHTML = osubtitle_arr[index];
+            // 下一張
+            obt1.onclick = function () {
+                for (line = 0; line < ospan.length; line++)//樣式清空
+                    ospan[line].style.background = 'black';
+                index++;
+
+                if (index >= 7) {
+                    index = 0;
+                    ospan[6].style.background = 'black'
+                    ospan[0].style.background = 'gray'
                 }
-                    ospan[this.index].style.background='grey'
-                    opic.src="photo/"+opic_arr[this.index];
-                    otext.innerHTML=otext_arr[this.index];
+                opic.src = "photo/" + opic_arr[index];
+                osmallpic.src = "photo/" + osmallpic_arr[index];
+                otext.innerHTML = otext_arr[index];
+                ospan[index - 1].style.background = 'black';
+                ospan[index].style.background = 'gray';
+                num = index;
+            }
+            // 上一張
+            obt2.onclick = function () {
+                for (line = 0; line < ospan.length; line++)
+                    ospan[line].style.background = 'black';
+                index--;
+                if (index == -1) {
+                    index = 6;
+                    ospan[0].style.background = 'black'
+                    ospan[6].style.background = 'gray'
+                }
+                opic.src = "photo/" + opic_arr[index];
+                osmallpic.src = "photo/" + osmallpic_arr[index];
+                otext.innerHTML = otext_arr[index];
+                ospan[index + 1].style.background = 'black'
+                ospan[index].style.background = 'gray'
+                num = index;
+
+            }
+            // 設置下方標題屬性
+            for (var i = 0; i < ospan.length; i++) {
+                //為每個按鈕設置數字
+                ospan[i].index = i;
+                ospan[i].onclick = function () {
+                    stop();
+                    start();
+                    for (var j = 0; j < opic_arr.length; j++) {
+                        opic.src = "photo/" + opic_arr[j];
+                        otext.innerHTML = otext_arr[j];
+                        ospan[j].style.background = "black"
+                    }
+                    ospan[this.index].style.background = 'grey'
+                    opic.src = "photo/" + opic_arr[this.index];
+                    otext.innerHTML = otext_arr[this.index];
                     num = this.index;
-                    
-                
-            }
-            ospan[i].onmouseover = function()
-            {
-                
-                for (var k=0;k<osmallpic_arr.length;k++)
-                
-                {
-                    osmallpic.src="photo/"+osmallpic_arr[k];
-                    osubtitle.innerHTML = osubtitle_arr[k];
                 }
-                    osmallpic.style.display="block";
-                    osmallpic.src="photo/"+osmallpic_arr[this.index];
-                    index = this.index;
-                    osubtitle.style.display='block';
-                    osubtitle.innerHTML=osubtitle_arr[index];
-            }
-        
-            
-            ospan[i].onmouseout = function()
-            {
-                
-                for (var a=0;a<osmallpic_arr.length;a++)
-                
-                {
-                    osmallpic.src="photo/"+osmallpic_arr[a];
-                    osubtitle.innerHTML = osubtitle_arr[a];
-                }
-                    osmallpic.style.display="none";
-                    osmallpic.src="photo/"+osmallpic_arr[this.index];
-                    index = this.index;
-                    osubtitle.style.display='none';
-                    osubtitle.innerHTML=osubtitle_arr[index];}
-        }
+                ospan[i].onmouseover = function () {
 
-                
-            opic.onmouseover = function(){
-                   for (var b=0;b<osubtitle_arr.length;b++)
-                {  
+                    for (var k = 0; k < osmallpic_arr.length; k++) {
+                        osmallpic.src = "photo/" + osmallpic_arr[k];
+                        osubtitle.innerHTML = osubtitle_arr[k];
+                    }
+                    osmallpic.style.display = "block";
+                    osmallpic.src = "photo/" + osmallpic_arr[this.index];
+                    index = this.index;
+                    osubtitle.style.display = 'block';
+                    osubtitle.innerHTML = osubtitle_arr[index];
+                }
+
+
+                ospan[i].onmouseout = function () {
+
+                    for (var a = 0; a < osmallpic_arr.length; a++) {
+                        osmallpic.src = "photo/" + osmallpic_arr[a];
+                        osubtitle.innerHTML = osubtitle_arr[a];
+                    }
+                    osmallpic.style.display = "none";
+                    osmallpic.src = "photo/" + osmallpic_arr[this.index];
+                    index = this.index;
+                    osubtitle.style.display = 'none';
+                    osubtitle.innerHTML = osubtitle_arr[index];
+                }
+            }
+
+
+            opic.onmouseover = function () {
+                for (var b = 0; b < osubtitle_arr.length; b++) {
                     osubtitle.innerHTML = osubtitle_arr[b];
-                    
-                }
-                    osubtitle.style.display='block';
-                    osubtitle.innerHTML  =  osubtitle_arr[num];
-                    
 
-                    
-                    
-                
                 }
-            
-           
-       
-            opic.onmouseout = function()
-                {
-                    for (var c=0;c<osubtitle_arr.length;c++)
-                {
+                osubtitle.style.display = 'block';
+                osubtitle.innerHTML = osubtitle_arr[num];
+
+
+
+
+
+            }
+
+
+
+            opic.onmouseout = function () {
+                for (var c = 0; c < osubtitle_arr.length; c++) {
                     osubtitle.innerHTML = osubtitle_arr[c];
                 }
-                    osubtitle.style.display='none';
-                    
-                
-                }
-            
-                var number = 0;
-            var index = -1 ;
+                osubtitle.style.display = 'none';
+
+
+            }
+            //設置時間
+            var number = 0;
+            var timer = null;
+            var index = -1;
             //設定關閉
-            ostart.onclick= function(){
+            ostart.onclick = function () {
                 start();
             }
-            ostop.onclick=function(){
-                stop();
+            ostop.onclick = function () {
             }
-            function start(){
-                    if(index != null){
-                    setInterval(plus,1000);
-                    }
+            function start() {
+                if (timer == null) {
+                    timer = setInterval(plus, 1000);
+                }
+
             }
             //暫停變更圖片
-            function stop(){
-                    clearInterval(index);
-                    
+            function stop() {
+                clearInterval(timer);
+                timer = null;
+
+
             }
-            function plus(){
+            function plus() {
                 index++;
                 console.log(index);
                 num = this.index;
-                if(index>=7){
-                    index=0;
+                if (index >= 7) {
+                    index = 0;
                     osubtitle.innerHTML = osubtitle_arr[0];
                 }
                 //物件隨時間切換
-                opic.src="photo/"+opic_arr[index];
-                osmallpic.src="photo/"+osmallpic_arr[index+1];
+                opic.src = "photo/" + opic_arr[index];
+                osmallpic.src = "photo/" + osmallpic_arr[index + 1];
                 otext.innerHTML = otext_arr[index]
-                osubtitle.innerHTML=osubtitle_arr[index];
+                osubtitle.innerHTML = osubtitle_arr[index];
                 osmallpic.style.display = "block"
                 osubtitle.style.display = "block"
-                
-                for(line=0;line<ospan.length;line++)//樣式清空
+
+                for (line = 0; line < ospan.length; line++)//樣式清空
                 {
-                    ospan[line].style.background='black';
+                    ospan[line].style.background = 'black';
                 }
-                ospan[index].style.background='gray'
-                if(index==6){
-                    ospan[index].style.background='gray'
-                    osmallpic.src = "photo/"+osmallpic_arr[0];
+                ospan[index].style.background = 'gray'
+                if (index == 6) {
+                    ospan[index].style.background = 'gray'
+                    osmallpic.src = "photo/" + osmallpic_arr[0];
                 }
             }
-        
-    </script>
+
+
+        </script>
 </body>
+
 </html>
