@@ -25,17 +25,15 @@
 						<div class="content">
 							<div class="inner">
 								<h1>桌遊介紹</h1>
-								<p>以一種桌遊ok的</p>
+								<p>開始玩你的第一款桌遊吧!</p>
 							</div>
 						</div>
-						<nav>
+						<nav id="nav">
 							<ul>
 								<li><a href="#intro">規則介紹</a></li>
 								<li><a href="#work">實際遊玩</a></li>
 								<li><a href="#about">遊玩照片</a></li>
 								<li><a href="#contact">聯絡我們</a></li>
-								</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
 							</ul>
 						</nav>
 					</header>
@@ -343,7 +341,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 				<!-- Footer -->
 					<footer id="footer">
-						
+						<input type="button" value="ok" id="good">
 					</footer>
 
 			</div>
@@ -357,6 +355,18 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				/* var owrapper = document.getElementById("wrapper");
+				var oheader = owrapper.getElementsByTagName("header");
+				var onav = owrapper.getElementsByTagName("nav"); */
+				var ofooter = document.getElementById("footer");
+				var obutton = document.getElementById("good");
+				var oinner = document.getElementsByClassName("inner");
+				var op = oinner.getele
+				obutton.onclick = function(){
+					alert(1);
+				} 
+			</script>
 
 	</body>
 </html>
