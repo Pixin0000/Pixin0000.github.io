@@ -6,7 +6,7 @@
     <meta name="keywords" contents="智動科,科學會,台北工專,智慧自動化工程" />
     <meta name="description" contents="課表,在學資訊">
     <meta name="robots" content="ALL">
-    <title>pixin的程式練習小小窩</title>
+    <title>pixin的程式練習網站</title>
     <style type="text/css">
         * {
             padding: 0px;
@@ -29,17 +29,34 @@
         }
 
         #main-header {
-            background-color: black;
-            padding: 50px;
+            background: -webkit-linear-gradient(left top,white,black);
+            background: -o-linear-gradient(bottom right,yellow,red);
+            background: -moz-linear-gradient(bottom right,yellow,rgb(70, 41, 41));
+            background: linear-gradient(to bottom right,yellow,rgb(34, 204, 204));
+            padding: 30px;
             text-align: center;
             color: ghostwhite;
             font-size: 30px;
         }
+        #main-header p{
+            color:rgba(0, 100, 0, 0.753);
+            font-size:30px;
+            font-family: "微軟黑正體";
+            
+        }
 
-        #main-nav {
+        #main_nav {
             background-color: deepskyblue;
             padding: 10px;
             height: 60px;
+        }
+        #main_nav ul li{
+            display:inline;
+            margin-left:5%;
+        }
+        #main_nav a{
+            font-size: 25px;
+            color:rgb(123, 41, 179);
         }
 
         #main-section {
@@ -56,7 +73,7 @@
             line-height: 1.5em;
             position: absolute;
             left: 1300px;
-            top: 220px;
+            top: 235px;
             text-align: center;
             font-size: 50px;
             color: orangered;
@@ -81,23 +98,43 @@
 </head>
 
 <body>
-    <body bdcolor="green">
         <header id="main-header">
-            五專部智慧自動化工程科科學會
+            <p>pixin的練習用網站</p>
         </header>
-        <nav id="main-nav">
-            <pre><ul><h1><a href="https://pixin0000.github.io/table/index.html" target="_blank" id="專二課表">專二課表</a>      <a href="https://iae.ntut.edu.tw/index.php" target="_blank">更詳盡資訊</a>      <a href="https://www.ntut.edu.tw/" target="_blank">北科官網</a>      <a href="https://pixin0000.github.io/homework/index.html">觀看作業</a></pre>
+        <nav id="main_nav">
+            <ul>
+                <li><a href="https://pixin0000.github.io/table/index.html" target="_blank" id="專二課表">專二課表</a></li>     
+                <li><a href="https://iae.ntut.edu.tw/index.php" target="_blank">更詳盡資訊</a></li>      
+                <li><a href="https://www.ntut.edu.tw/" target="_blank">北科官網</a></li>          
+                <li><a href="https://pixin0000.github.io/homework/index.html" target="_blank">觀看作業</a></li>
+                <li><a href="http://pixin_web.nctu.me/semester/index.html" target="_blank">專二專案</a></li>
+            </ul>
         </nav>
         <section id="main-section">
         </section>
         <aside id="main-aside">
-            <font>油歌推薦</font>
-            <iframe width="580" height="300" src="https://www.youtube.com/embed/FE40N7DOPAQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe width="580" height="300" src="https://www.youtube.com/embed/j83OVgv6woA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <img src=https://media.giphy.com/media/OfXKySrn0Ej4s/200.gif height=250 width=400>
+            <p>影音檔</p>
+            <!-- <iframe width="580" height="300" src="https://www.youtube.com/embed/FE40N7DOPAQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="580" height="300" src="https://www.youtube.com/embed/j83OVgv6woA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+           <!--  <img src=https://media.giphy.com/media/OfXKySrn0Ej4s/200.gif height=250 width=400> -->
         </aside>
         <footer id="main-footer">
-            <div id="B"><pre><ul><li>網頁創作者:胡歆</li>      <li>地址:106台北市大安區忠孝東路三段1號</li>      <li>電話:0961311798</li>      <li>email:<a href="https://mail.google.com/mail/u/0/#inbox" target="blank">simon121705@gmail.com</a></li> </ul></div></pre>
+            <div id="B"><pre><ul><li>Created by 胡歆</li>      <li>地址:106台北市大安區忠孝東路三段1號</li>      <li>電話:0961311798</li>      <li>email:<a href="https://mail.google.com/mail/u/0/#inbox" target="blank">simon121705@gmail.com</a></li></ul></div></pre>
+   
     </body>
+    <script>
+        var onav = document.getElementById('main_nav');
+        var oul = onav.getElementsByTagName("ul")[0];
+        var oa = oul.getElementsByTagName("a");
+        for(var i=0;i<=4;i++){
+            oa[i].style.color = "rgb(123, 41, 179)";
+         oa[i].onmousemove = function(){
+             this.style.color = "white";
+        }
+        oa[i].onmouseout = function(){
+            this.style.color = "rgb(123, 41, 179)";
+        }
+    }
+    </script>
 
 </html>
