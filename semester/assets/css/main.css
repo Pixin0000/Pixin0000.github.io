@@ -1659,3 +1659,9 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+		h1 .title{
+			color:red;
+		}
+		.inner p{
+			color:rgba(3, 248, 228, 0.8);
+		}

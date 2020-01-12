@@ -43,10 +43,55 @@
 
 						<!-- Intro -->
 							<article id="intro">
-								<h2 class="major">Intro</h2>
+								<h2 class="major">規則介紹</h2>
 								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+								<pre>
+<h1 class="title">遊戲規則</h1>玩家：6人
+I.	遊戲開始前：
+每2人一隊，起始位置分別在礦場左右兩端頂點。
+分別決定基礎戰力，同隊內一人為500，另一人為700。不公開戰力。每人各有3命。
+II.	遊戲開始：
+1.	擲骰子決定順序，順時針開始遊玩。
+2.	回合內玩家擲骰子決定移動步數，下一步不可以與上一步位置相同。
+3.	停止位置在礦場旁可以領取當下礦場的全部金幣。
+4.	停止位置在商店旁可以購買裝備或道具箱。回合內最多購買一件裝備與一道具箱。
+5.	移動後可使用道具牌、職業技能。
+6.	若周圍1格內有其他玩家可選擇是否攻擊該玩家。攻擊花費1回合，不可使用商店。
+	若發動攻擊，雙方公開戰力，較低一方戰敗。戰勝方減去部分戰力並獲得金錢；
+	戰敗方扣除1命，可保留一件裝備並回到重生點。平手則兩方都回到重生點，不會有任何損失。
+7.	若停止地點在野怪旁（包括地圖中心共7點），必須抽取怪物牌並挑戰。
+	若戰力大於等於野怪戰力，可獲取獎勵。戰力低於怪物，則扣除1命，並回到重生點。
+8.	在地圖中心可抽取職業牌，獲得職業後傳送回重生點。職業不須公開。
+9.	遊戲在第5輪開始，每2輪收縮邊界直到遊戲結束（即5、7、9、11…）。
+	收縮邊界由擲骰子決定。1次會收縮左右共2邊邊界。
+	若收縮後玩家處在邊界外，立即扣除1命並回到重生點。
+	重生點位置會隨邊界收縮前移，分別位在6個角落。
+10.	玩家生命值為0時，即退出遊戲。
+11.	將另外2隊玩家淘汰隊伍獲勝。
+備註規則：
+1.	礦場：每輪生成50金幣，可累積。
+2.	商店：可使用金幣購買道具箱或裝備。購買裝備後持有該裝備牌，不須公開。
+	購買道具箱隨機抽取1道具牌並持有，不須公開。
+3.	職業：在地圖中心獲得，抽出職業牌後不須公開。
+4.	弓箭手：攻擊範圍從原本1格變為2格。
+5.	牧師：自己與2格內的隊友受到攻擊時，降低敵人戰力20%。
+6.	占星者：在自己與隊友存在位置1格內製造傳送站。自己或隊友可另外花費1回合傳送到另一端。
+	傳送站在使用一次後消失。（技能有輪冷卻時間）
+7.	騎士：移動步數為原本的雙倍。（技能有輪冷卻時間）
+8.	巫師：施法使2格內敵人跳過1輪。（技能有輪冷卻時間）
+9.	油油小丑：盜取2格內其中1敵人的1件裝備（隨機抽取）。
+10.	裝備：根據卡牌上的金額購買。購買後持有該裝備牌，不須公開。
+11.	道具箱[200金幣]
+12.	間諜：可指定1玩家，獲得其戰力值1次。
+13.	礦工：可在礦場旁領取雙倍金幣1次。
+14.	優惠券：可在商店半價購買道具箱及裝備1次（可同時半價購買道具箱及裝備）。
+15.	瞬間移動：
+16.	傳送站：在自己與隊友存在位置1格內製造傳送站。自己或隊友可另外花費1回合傳送到另一端。
+	傳送站在使用一次後消失。
+17.	移動雙倍：該回合移動步數為擲骰子的2倍。
+18.	奪取敵人道具：可指定1玩家，從該玩家手中抽取並獲得1裝備牌。
+6.	野怪
+</pre>
 							</article>
 
 						<!-- Work -->
@@ -341,7 +386,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 				<!-- Footer -->
 					<footer id="footer">
-						<input type="button" value="ok" id="good">
+						
 					</footer>
 
 			</div>
@@ -356,16 +401,18 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
-				/* var owrapper = document.getElementById("wrapper");
-				var oheader = owrapper.getElementsByTagName("header");
-				var onav = owrapper.getElementsByTagName("nav"); */
-				var ofooter = document.getElementById("footer");
-				var obutton = document.getElementById("good");
-				var oinner = document.getElementsByClassName("inner");
-				var op = oinner.getele
-				obutton.onclick = function(){
-					alert(1);
-				} 
+				var onav = document.getElementById('nav');
+				var ul = onav.getElementsByTagName('ul')[0];
+				var oa = onav.getElementsByTagName('a');
+				for(var i=0;i<=3;i++){
+					oa[i].style.backgroundColor='rgba(0,0,0,0.5)';
+					oa[i].onmouseover = function(){
+						this.style.backgroundColor='rgba(255,255,255,0.2)';
+					}
+					oa[i].onmouseleave = function(){
+						this.style.backgroundColor='rgba(0,0,0,0.5)';
+					}
+				}
 			</script>
 
 	</body>
