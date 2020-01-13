@@ -11,6 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://kit.fontawesome.com/2f590ae985.js" crossorigin="anonymous"></script>
 	</head>
 	<body class="is-preload">
 
@@ -20,7 +21,7 @@
 				<!-- Header -->
 					<header id="header">
 						<div class="logo">
-							<span class="icon fa-gem"></span>
+							<span class="fas fa-chess-rook fa-3x"></span>
 						</div>
 						<div class="content">
 							<div class="inner">
@@ -128,15 +129,17 @@ II.	遊戲開始：
 										</div>
 									</div>
 									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="button" value="Send Message" class="primary" /></li>
 										<li><input type="reset" value="Reset" /></li>
 									</ul>
 								</form>
 								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
 									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li> -->
+									<li><a href="https://github.com/Pixin0000/pixin0000.github.io" class="icon brands fa-github" target=_blank></a></li>
+									<li><a href="https://shopee.tw/user/account/profile/" class="fas fa-shopping-cart" target=_blank></a></li>
 								</ul>
 							</article>
 
@@ -222,7 +225,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 										<table>
 											<thead>
 												<tr>
-													<th>胡歆</th>
+													<th></th>
 													<th>Description</th>
 													<th>Price</th>
 												</tr>
@@ -386,7 +389,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 				<!-- Footer -->
 					<footer id="footer">
-						
+						<p>@created by group 4, HTML 5</p>
 					</footer>
 
 			</div>
@@ -402,8 +405,11 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/main.js"></script>
 			<script>
 				var onav = document.getElementById('nav');
-				var ul = onav.getElementsByTagName('ul')[0];
+				var oul = onav.getElementsByTagName('ul')[0];
 				var oa = onav.getElementsByTagName('a');
+				var oactions = document.getElementsByClassName('actions');
+				var obt = document.getElementsByClassName('primary')[0];
+
 				for(var i=0;i<=3;i++){
 					oa[i].style.backgroundColor='rgba(0,0,0,0.5)';
 					oa[i].onmouseover = function(){
@@ -412,6 +418,9 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					oa[i].onmouseleave = function(){
 						this.style.backgroundColor='rgba(0,0,0,0.5)';
 					}
+				}
+				obt.onclick = function(){
+					alert(1);
 				}
 			</script>
 

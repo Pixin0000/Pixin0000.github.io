@@ -643,7 +643,9 @@ input, select, textarea {
 		display: inline-block;
 		position: relative;
 	}
-
+	.fas fa-chess{
+		font-size: 50px;
+	}
 		.image:before {
 			pointer-events: none;
 			background-image: url("../../images/overlay.png");
@@ -1205,7 +1207,10 @@ input, select, textarea {
 		padding: 4rem 2rem;
 		z-index: 3;
 	}
-
+		#footer p{
+			color:rgb(255, 110, 110);
+			font-size:20px;
+		}
 		#wrapper:before {
 			content: '';
 			display: block;
@@ -1293,13 +1298,13 @@ input, select, textarea {
 		#header .logo {
 			width: 5.5rem;
 			height: 5.5rem;
-			line-height: 5.5rem;
+			line-height:7.5rem;
 			border: solid 1px #ffffff;
 			border-radius: 100%;
 		}
 
 			#header .logo .icon:before {
-				font-size: 2rem;
+				font-size: 100rem;
 			}
 
 		#header .content {

@@ -36,12 +36,25 @@ table td{
     border:1px solid black;
     font-size:30px;
     line-height:30px;
+    cursor: pointer;
 }
-
-
+a {
+    text-decoration: none;
+}
+a:visited{
+    color:rgb(0, 0, 0);
+}
+#header{
+    padding:30px;
+    background-color: rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
+    font-size:30px;
+    line-height: 30px;
+    text-align: center;
+}
 </style>
 <body>
-
+    <header id=header>pixin的專二行事曆</header>
     <table>
         <tr>
             <th>時間</th>
@@ -53,12 +66,12 @@ table td{
         </tr>
 
         <tr>
-            <td >8:10~9:00</td>
-            <td >物理</td>
-            <td >微積分與演練</td>
-            <td >日文</td>
-            <td >微積分與演練</td>
-            <td ></td>
+            <td>8:10~9:00</td>
+            <td>物理</td>
+            <td>微積分與演練</td>
+            <td>日文</td>
+            <td>微積分與演練</td>
+            <td>PLC(暫定)</td>
         </tr>
         <tr>
             <td>9:10~10:00</td>
@@ -66,7 +79,7 @@ table td{
             <td>微積分與演練</td>
             <td>日文</td>
             <td>微積分與演練</td>
-            <td></td>
+            <td>PLC(暫定)</td>
         </tr>
         <tr>
             <td>10:10~11:00</td>
@@ -74,7 +87,7 @@ table td{
             <td>班週會</td>
             <td>物理</td>
             <td>國文</td>
-            <td></td>
+            <td>PLC(暫定)</td>
         </tr>
         <tr>
             <td>11:10~12:00</td>
@@ -82,7 +95,7 @@ table td{
             <td>班週會</td>
             <td>英文</td>
             <td>國文</td>
-            <td></td>
+            <td>PLC(暫定)</td>
         </tr>
         <td>13:10~14:00</td>
         <td>職場實務</td>
@@ -104,7 +117,7 @@ table td{
             <td></td>
             <td>英文</td>
             <td>物理實驗</td>
-            <td></td>
+            <td>製造學(暫定)</td>
             <td>程式設計與實習</td>
         </tr>
         <tr>
@@ -112,16 +125,46 @@ table td{
             <td></td>
             <td></td>
             <td></td>
+            <td>製造學(暫定)</td>
+            <td><a href="##">程式設計與實習</a></td>
+        </tr>
+        <tr>
+            <td>17:10~18:00</td>
             <td></td>
-            <td>程式設計與實習</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>製造學(暫定)</td>
         </tr>
         
         
     </table>
-    <div style="margin-bottom:500px"></div>
+    <h1>預計修得學分:25</h1>
+    <div style="margin-bottom:100px"></div>
 </body>
 <script>
     //alert(window.screen.availHeight);
+    var otable = document.getElementsByTagName('table')[0];
+    var otd = otable.getElementsByTagName('td');
+    for(var i=0;i<=54;i++){
+        otd[i].style.color = 'black';
+        otd[i].onmousemove = function(){
+            this.style.color = 'white';
+        }
+        otd[i].onmouseout = function(){
+            this.style.color = 'black';
+        }
+    }
+/*     for(var i=0;i<=47;i++){
+    otd = otable.getElementsByTagName('td');
+    oa = document.createElement('a');
+    oa.href='#';
+    otext = document.createTextNode('dog');
+    oa.appendChild(otext);
+    otd.appendChild(oa);
+    console.log(oa); }*/
+    
+
 </script>
 
 </html>
