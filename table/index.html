@@ -40,17 +40,22 @@ table td{
 }
 a {
     text-decoration: none;
+    color:green;
 }
 a:visited{
     color:rgb(0, 0, 0);
 }
 #header{
     padding:30px;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(35, 153, 137);
     color:rgb(255, 255, 255);
     font-size:30px;
     line-height: 30px;
     text-align: center;
+}
+button{
+    width:30px;
+
 }
 </style>
 <body>
@@ -126,7 +131,7 @@ a:visited{
             <td></td>
             <td></td>
             <td>製造學(暫定)</td>
-            <td><a href="##">程式設計與實習</a></td>
+            <td><a href="">程式設計與實習</a></td>
         </tr>
         <tr>
             <td>17:10~18:00</td>
@@ -140,12 +145,23 @@ a:visited{
         
     </table>
     <h1>預計修得學分:25</h1>
-    <div style="margin-bottom:100px"></div>
+    <h1><a href="https://aps.ntut.edu.tw/course/tw/Cprog.jsp?format=-4&year=107&matric=5&division=2B0">五年課程概述</a></h1>
+    <h1><a href="https://aps.ntut.edu.tw/course/tw/Cprog.jsp?format=-3&year=107&matric=5">五專五年應修得學分</a></h1>
+    <h1><a href="##">各科評分標準</a></h1>
+    <input type="text" id="text">
+    <input type="button" id="bt" value="計算">
+    <div style="margin-bottom:30px"></div>
 </body>
 <script>
     //alert(window.screen.availHeight);
     var otable = document.getElementsByTagName('table')[0];
     var otd = otable.getElementsByTagName('td');
+    var obt = document.getElementById('bt');
+    var otext = document.getElementById('text')
+    obt.onclick = function(){
+        var num = Number(otext.value);
+        alert(num * num);
+    }
     for(var i=0;i<=54;i++){
         otd[i].style.color = 'black';
         otd[i].onmousemove = function(){
