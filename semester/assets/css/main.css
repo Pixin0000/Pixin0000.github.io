@@ -1209,7 +1209,7 @@ input, select, textarea {
 	}
 		#footer p{
 			color:rgb(255, 110, 110);
-			font-size:20px;
+			font-size:3%px;
 		}
 		#wrapper:before {
 			content: '';
@@ -1669,4 +1669,11 @@ input, select, textarea {
 		}
 		.inner p{
 			color:rgba(3, 248, 228, 0.8);
+		}
+		#intro pre{
+			font-size:5%px;
+			position:relative;
+		}
+		#intro span{
+			color:rgb(192, 177, 39);
 		}

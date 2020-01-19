@@ -58,21 +58,25 @@
             color:rgb(123, 41, 179);
         }
 
-        #main-section {
-            padding: 500px 650px;
-            background-image: url(http://i.imgur.com/siH2wnb.jpg);
-            font-size: 30px;
+        #main-article {
+            width:100%;
+            height:1000px;
             float: left;
             text-align: left;
+            margin:0px;
+        }
+        #main-article .pic{
+            width:1300px;
+            height:1000px;
+            margin-bottom: 0px;
         }
 
         #main-aside {
             width: 31.70%;
-            height:1000px;
             line-height: 1.5em;
             position: absolute;
             left: 68.31%;
-            top: 20%px;
+            top: 34.5%;
             text-align: center;
             font-size: 50px;
             color: orangered;
@@ -81,17 +85,36 @@
 
         #main-footer {
             background-color: aqua;
-            padding: 20px;
+            padding: 25px;
             float: none;
             font-size: 30px;
             color: rgb(1, 0, 75);
             clear: both;
+            margin:0px;
         }
 
         #B ul li {
             display: inline;
             white-space: nowrap;
             margin:2.2%;
+        }
+        #main-article .bt{
+            position:relative;
+            left:-50px;
+            top:-400px;
+            border-radius: 5;
+            width:50px;
+            height:50px;
+            background-color: chartreuse;
+        }
+        #main-article .bt2{
+            position:relative;
+            left:-1370px;
+            top:-400px;
+            border-radius: 5;
+            width:50px;
+            height:50px;
+            background-color: chartreuse;
         }
     </style>
 </head>
@@ -107,17 +130,20 @@
                 <li><a href="https://www.ntut.edu.tw/" target="_blank">北科官網</a></li>          
                 <li><a href="https://pixin0000.github.io/homework/index.html" target="_blank">觀看作業</a></li>
                 <li><a href="http://pixin_web.nctu.me/semester/index.html" target="_blank">專二專案</a></li>
-                <li><a href="https://github.com/Pixin0000/pixin0000.github.io" target="_blank">GITHUB</a></li>
+                <li><a href="http://pixin_web.nctu.me/score_calculate/index.html" target="_blank">計算成績</a></li>
+                <li><a href="https://github.com/Pixin0000/pixin0000.github.io" target="_blank">GitHub</a></li>
             </ul>
         </nav>
-        <section id="main-section">
-        </section>
-        <aside id="main-aside">
-            <p>影音檔</p>
-            <!-- <iframe width="580" height="300" src="https://www.youtube.com/embed/FE40N7DOPAQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe width="580" height="300" src="https://www.youtube.com/embed/j83OVgv6woA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-           <!--  <img src=https://media.giphy.com/media/OfXKySrn0Ej4s/200.gif height=250 width=400> -->
-           <p>dog</p>
+        <article id="main-article">
+            <img class='pic' src="photo/img-1.jpg">
+            <input type="button" class="bt" value=">"/>
+            <input type="button" class="bt2" value="<"/>
+            <aside id="main-aside">
+                <p>影音檔</p>
+                <iframe width="580" height="300" src="https://www.youtube.com/embed/FE40N7DOPAQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="580" height="300" src="https://www.youtube.com/embed/j83OVgv6woA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+               <!--  <img src=https://media.giphy.com/media/OfXKySrn0Ej4s/200.gif height=250 width=400> -->
+        </article>
         </aside>
         <footer id="main-footer">
             <div id="B">
@@ -136,7 +162,21 @@
         var onav = document.getElementById('main_nav');
         var oul = onav.getElementsByTagName("ul")[0];
         var oa = oul.getElementsByTagName("a");
-        for(var i=0;i<=4;i++){
+        var opic = document.getElementsByClassName('pic')[0];
+        var index = 1;
+        var obt = document.getElementById('bt');
+        var timer = null;
+        var opic_arr = [
+            'img-1.jpg',
+            'img-2.jpg',
+            'img-3.jpg',
+            'img-4.jpg',
+            'img-5.jpg',
+            'img-6.jpg',
+            'img-7.jpg',
+            'img-8.jpg'
+        ]
+        for(var i=0;i<oa.length;i++){
             oa[i].style.color = "rgb(123, 41, 179)";
          oa[i].onmousemove = function(){
              this.style.color = "white";
@@ -144,6 +184,19 @@
         oa[i].onmouseout = function(){
             this.style.color = "rgb(123, 41, 179)";
         }
+    }
+        start();
+    function start(){
+        if(timer == null){
+        timer = setInterval(plus,1000);}
+    }
+    function plus(){
+            index++;
+            console.log(index);
+            opic.src= "photo/" + opic_arr[index];
+            if(index==7){
+                index=-1;
+            }
     }
     </script>
 

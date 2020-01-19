@@ -91,7 +91,7 @@ h1 p{
 }
 </style>
 <body>
-    <header id=header>pixin的專二行事曆</header>
+    <header id=header>專二課表及行事曆</header>
     <table>
         <tr>
             <th>時間</th>
@@ -123,7 +123,7 @@ h1 p{
             <td><a href="##">體育</a></td>
             <td><a href="##">班週會</a></td>
             <td><a href="##">物理</a></td>
-            <td><a href="https://aps.ntut.edu.tw/course/tw/ShowSyllabus.jsp?snum=269076&code=12079">國文</a></td>
+            <td><a href="##">國文</a></td>
             <td><a href="##">PLC(暫定)</a></td>
         </tr>
         <tr>
@@ -131,12 +131,12 @@ h1 p{
             <td><a href="##">體育</a></td>
             <td><a href="##">班週會</a></td>
             <td><a href="##">英文</a></td>
-            <td><a href="https://aps.ntut.edu.tw/course/tw/ShowSyllabus.jsp?snum=269076&code=12079">國文</td>
+            <td><a href="##">國文</td>
             <td><a href="##">PLC(暫定)</a></td>
         </tr>
         <td>13:10~14:00</td>
         <td><a href="##">職場實務</a></td>
-        <td></td>
+        <td><a href='##'>靜力學</a></td>
         <td><a href="##">物理實驗</a></td>
         <td><a href="##">英語會話</a></td>
         <td><a href="##">程式設計與實習</a></td>
@@ -168,11 +168,20 @@ h1 p{
         <tr>
             <td>17:10~18:00</td>
             <td></td>
-            <td></td>
-            <td></td>
+            <td><a href='##'>工程材料</a></td>
+            <td><a href='##'>靜力學</a></td>
             <td></td>
             <td><a href="##">製造學(暫定)</a></td>
         </tr>
+        <tr>
+            <td>18:10~19:00</td>
+            <td></td>
+            <td><a href='##'>工程材料</a></td>
+            <td><a href='##'>工程材料</a></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
         
         
     </table>
@@ -181,15 +190,6 @@ h1 p{
     <li><a href="https://aps.ntut.edu.tw/course/tw/Cprog.jsp?format=-4&year=107&matric=5&division=2B0">五年課程概述</a></li>
     <li><a href="https://aps.ntut.edu.tw/course/tw/Cprog.jsp?format=-3&year=107&matric=5">五專五年應修得學分</a></li>
     <li><a href="https://aps.ntut.edu.tw/course/tw/Subj.jsp?format=-4&year=108&sem=2&code=2289">各科評分標準</a></li>
-    </ul>
-    <input type="text" class="text 1">
-    <input type="text" class="text 2">
-    <input type="text" class="text 3">
-    <input type="text" class="text 4">
-    <input type="text" class="text 5">
-    <input type="text" class="text 6">
-    <input type="button" id="bt" value="計算">
-    <div style="margin-bottom:30px"></div>
 </body>
 <script>
     //alert(window.screen.availHeight);
@@ -210,9 +210,9 @@ h1 p{
             this.style.color = 'black';
         }
     } */
-    oa[0].style.color='black';
     for(var i=0; i<oa.length ;i++){
         oa[i].index = i;
+        oa[i].style.color = 'black';
         oa[i].onmouseover = function(){
             oa[this.index].style.color = 'white';
         }
@@ -228,31 +228,6 @@ h1 p{
     oa.appendChild(otext);
     otd.appendChild(oa);
     console.log(oa); }*/
-    for(var i=0;i<otext.length;i++){
-        otext[i].index = i;
-    otext[i].onkeydown = function(){
-        ev = window.event;
-        if(ev.keyCode==13){
-            otext[this.index+1].focus();
-        }
-    }
-    otext[5].onkeydown = function(){
-        ev = window.event;
-        if(ev.keyCode==13){
-            obt.focus();
-        }
-    }
-} 
-    obt.onclick = function(){
-    /* for(var i=0;i<otext.length;i++){
-     
-    } */
-    for(var j=0;j<otext.length;j++){
-        arr[j] = Number(otext[j].value);
-        num += arr[j];
-        }
-        alert(num)
-    }
 </script>
 
 </html>
