@@ -2,6 +2,10 @@
 <head>
 <title>總成績及GPA計算</title>
 <style type="text/css">
+*{
+    padding:0px;
+    margin:0px;
+}
 label {
 display:block;
 margin:.25em 0em;
@@ -18,17 +22,16 @@ div{
     height:500px;
     position: absolute;
     left:38%;
-    top:50px;
-    border: 1px solid ;
+    top:120px;
+
 }
 table{
     width: 500px;
     height:100px;
 
 }
-table th{
+table td{
     margin:0px;
-    border:1px solid black;
     
 }
 .text{
@@ -62,17 +65,32 @@ table th{
 }
 #bt5{
     position:relative;
-    left:-100px;
-    top:200px;
+    left:-80px;
+    top:230px;
 }
 #bt6{
     position:relative;
-    left:150px;
-    top:200px;
+    left:180px;
+    top:230px;
+}
+header{
+    background-color:blue;
+    color:black;
+    font-size: 30px;
+    padding:2%;
+    line-height:30px;  
+    margin:0px;
+    text-align: center;  
+}
+p{
+    font-size:30px;
+    color:black;
 }
 </style>
 </head>
-    <div>
+<body>
+    <header>成績及學分計算</header>
+    <div id='box'>
     <table>
     <tr>
         <td><p id='text1'>成績<input type='text' class='text'></p></td>
@@ -123,18 +141,22 @@ table th{
     <input type='button' class='bt' id='bt5' value='計算平均'>
     <input type='button' class='bt' id='bt6' value='計算gpa'>
     </div>
-
+</body>
 <script type="text/javascript">
     var otext = document.getElementsByClassName('text');
     var obt = document.getElementsByClassName('button');
     var obt1 = document.getElementsByClassName('bt');
+    var obox = document.getElementById('box');
+    var otable = document.getElementsByTagName('table')[0];
     var num = 0 ;
     var arr = [];
     var arr2 = [];
     var gpa = 0;
-    var otable = document.getElementById('table');
+    var j=0;
+    var arr3 = [1,2,3,4,5,6,8,9,7,9,798,789,789,89,7897,987,897,897,987]
     for(i=0;i<otext.length;i++){
         otext[i].index = i
+        end = otext[otext.length-1]
     otext[i].onkeydown = function(ev){
         ev = window.event || ev;
         if(ev.keyCode==13){
@@ -145,24 +167,71 @@ table th{
             otext[this.index-1].focus();
         }
     }
-    otext[19].onkeydown = function(ev){
+     end.onkeydown = function(ev){
         ev = window.event || ev;
         if(ev.keyCode==13){
-            obt1[0].focus();
-        }
-    }}
+            obt[0].focus();
+     }}
+     }
     function addtext(){
-        otable += '<tr>'
-        otable += '<td>'
+        //<td><p id='text1'>成績<input type='text' class='text'></p></td>
+        //<td><p id='text2'>學分數<input type='text' class='text'></p></td>
+        var newtr = document.createElement('tr')
+        var newtd1 = document.createElement('td')
+        var newtd2 = document.createElement('td')
+        var newp1 = document.createElement('p')
+        var newp2 = document.createElement('p')
+        var newinput1 = document.createElement('input')
+        var newinput2 = document.createElement('input')
+        newinput1.setAttribute('class' , 'text')
+        newinput1.setAttribute('type' , 'text')
+        newinput1.setAttribute('name' , 'dog')
+        newinput2.setAttribute('class' , 'text')
+        newinput2.setAttribute('type' , 'text')
+        newp1.setAttribute('id' , 'text1')
+        newp2.setAttribute('id' , 'text2')
+        var newtext1 = document.createTextNode('成績')
+        var newtext2 = document.createTextNode('學分數')
+        newtr.appendChild(newtd1)
+        newtr.appendChild(newtd2)
+        newtd1.appendChild(newp1)
+        newtd2.appendChild(newp2)
+        newp1.appendChild(newtext1)
+        newp2.appendChild(newtext2)
+        newp1.appendChild(newinput1)
+        newp2.appendChild(newinput2)
+        otable.appendChild(newtr)
+
+            newinput1.onkeydown = function(ev){
+                ev = window.event;
+                if(ev.keyCode == 13){
+            newinput2.focus()}
+            }
+    
+            newinput2.index = i;
+            newinput2.onkeydown = function(ev){
+                ev = window.event;
+                if(ev.keyCode == 13){
+            obt[0].focus()}
+            }
+            obt[0].onkeydown = function(ev){
+        ev = window.event;
+        if(ev.keyCode == 13){
+            newinput1.focus();
+        }
+    }
+
+        /* otable += '<td>'
         otable += 
         otable += '</td>'
         otable += '<td><p id="text2">學分數<input type="text" class="text"></p></td>'
-        otable += '</tr>'
+        otable += '</tr>' */
     }
     function deltext(){
 
     }
     for(i=0;i<=obt.length;i++){
+    
     obt[0].onclick = function(){
         addtext();
     }
@@ -262,6 +331,8 @@ E 49 分以下 0 點 */
     //--> */
     </script>
 </html>
+
+
 
 
 
