@@ -1,3 +1,3 @@
 # pixin0000.github.io 
-I love you guys!
-my web:http://pixin_web.nctu.me/
+my web site is:http://pixin_web.nctu.me/
+<pre>臭狗</pre>
