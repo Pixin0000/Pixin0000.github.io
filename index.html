@@ -66,7 +66,7 @@
             margin:0px;
         }
         #main-article .pic{
-            width:1300px;
+            width:100%;
             height:1000px;
             margin-bottom: 0px;
         }
@@ -85,7 +85,7 @@
 
         #main-footer {
             background-color: aqua;
-            padding: 25px;
+            padding: 20px;
             float: none;
             font-size: 30px;
             color: rgb(1, 0, 75);
@@ -98,19 +98,19 @@
             white-space: nowrap;
             margin:2.2%;
         }
-        #main-article .bt{
+        #main-article #bt{
             position:relative;
-            left:-50px;
-            top:-400px;
+            left:0px;
+            top:-500px;
             border-radius: 5;
             width:50px;
             height:50px;
             background-color: chartreuse;
         }
-        #main-article .bt2{
+        #main-article #bt2{
             position:relative;
-            left:-1370px;
-            top:-400px;
+            left:1800px;
+            top:-500px;
             border-radius: 5;
             width:50px;
             height:50px;
@@ -136,15 +136,15 @@
         </nav>
         <article id="main-article">
             <img class='pic' src="photo/img-1.jpg">
-            <input type="button" class="bt" value=">"/>
-            <input type="button" class="bt2" value="<"/>
-            <aside id="main-aside">
+            <input type="button" id="bt" value="上一張"/>
+            <input type="button" id="bt2" value="下一張"/>
+            <!-- <aside id="main-aside">
                 <p>影音檔</p>
                 <iframe width="580" height="300" src="https://www.youtube.com/embed/FE40N7DOPAQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <iframe width="580" height="300" src="https://www.youtube.com/embed/j83OVgv6woA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-               <!--  <img src=https://media.giphy.com/media/OfXKySrn0Ej4s/200.gif height=250 width=400> -->
+              <img src=https://media.giphy.com/media/OfXKySrn0Ej4s/200.gif height=250 width=400>
+            </aside> -->
         </article>
-        </aside>
         <footer id="main-footer">
             <div id="B">
                 <ul>
@@ -188,7 +188,7 @@
         start();
     function start(){
         if(timer == null){
-        timer = setInterval(plus,1000);}
+        timer = setInterval(plus,3000);}
     }
     function plus(){
             index++;
