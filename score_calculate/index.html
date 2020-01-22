@@ -1,95 +1,132 @@
 <html>
-<head>
-<title>總成績及GPA計算</title>
-<style type="text/css">
-*{
-    padding:0px;
-    margin:0px;
-}
-label {
-display:block;
-margin:.25em 0em;
-}
-.button {
-    color:aliceblue;
-    background-color: blueviolet;
-    width:100%px;
-    height:30px;
-    font-size: 15px;
-}
-div{
-    width:500px;
-    height:500px;
-    position: absolute;
-    left:38%;
-    top:120px;
+    <head>
+    <title>總成績及GPA計算</title>
+    <style type="text/css">
+    *{
+        padding:0px;
+        margin:0px;
+    }
+    label {
+    display:block;
+    margin:.25em 0em;
+    }
+    .button {
+        color:aliceblue;
+        background-color: blueviolet;
+        width:100%px;
+        height:30px;
+        font-size: 15px;
+    }
+    #box{
+        width:500px;
+        height:500px;
+        position: absolute;
+        left:37%;
+        top:120px;
 
-}
-table{
-    width: 500px;
-    height:100px;
+    }
+    table{
+        width: 500px;
+        height:100px;
 
-}
-table td{
-    margin:0px;
-    
-}
-.text{
-    width:80px;
-    height:20px;
-    margin:5px;
-}
-#text1{
-    position:relative;
-    float:left;
-}
-#text2{
-    position:relative;
-    left:100px;
-}
-#bt1{
-    position:relative;
-    left:0px;
-    margin:10px;
-}
-#bt3{
-    position:relative;
-    left:200px;
-    margin:10px;
-}
-.bt{
-    color:rgb(204, 73, 73);
-    background-color:white;
-    width:100px;
-    height:50px;
-}
-#bt5{
-    position:relative;
-    left:-80px;
-    top:230px;
-}
-#bt6{
-    position:relative;
-    left:180px;
-    top:230px;
-}
-header{
-    background-color:blue;
-    color:black;
-    font-size: 30px;
-    padding:2%;
-    line-height:30px;  
-    margin:0px;
-    text-align: center;  
-}
-p{
-    font-size:30px;
-    color:black;
-}
+    }
+    table td{
+        margin:0px;
+        
+    }
+    .text{
+        width:80px;
+        height:20px;
+        margin:5px;
+    }
+    #text1{
+        position:relative;
+        float:left;
+    }
+    #text2{
+        position:relative;
+        left:100px;
+    }
+    #bt1{
+        position:relative;
+        left:-1%;
+        margin:10px;
+    }
+    #bt2{
+        position:relative;
+        left:80%;
+        margin:10px;
+    }
+    .bt{
+        color:rgb(204, 73, 73);
+        background-color:white;
+        width:100px;
+        height:50px;
+    }
+    #bt5{
+        position:relative;
+        left:-130px;
+        top:230px;
+    }
+    #bt6{
+        position:relative;
+        left:200px;
+        top:230px;
+    }
+    header{
+        background: -webkit-linear-gradient(yellow,red);
+        background: -o-linear-gradient(yellow,red);
+        background: -moz-linear-gradient(yellow,red);
+        background: linear-gradient(yellow,red);
+        color:black;
+        font-size: 30px;
+        padding:2%;
+        line-height:30px;  
+        margin:0px;
+        text-align: center;  
+    }
+    p{
+        font-size:30px;
+        color:black;
+    }
+    header p{
+        font-size:50px;
+        color:rgb(0, 77, 32);
+    }
+    #introduction{
+        border:1px solid;
+        width:400px;
+        height:50%;
+    }
+    #introduction pre{
+        color:darkcyan;
+        font-size:20px;
+    }
 </style>
 </head>
 <body>
-    <header>成績及學分計算</header>
+    <header><p>成績及學分計算</p></header>
+    <aside>
+        <div id='introduction'>
+        <h1>使用說明</h1>
+        <pre>
+1.輸入完最後一排之後按下enter會自動換行
+2.若新增的排不需要可按下delete刪除
+3.最下方的兩個鈕可以分別計算平均與gpa
+4.若有空行也沒關係 不影響計算結果
+    GPA計算參考:
+
+            A 80 - 100 分 4 點
+            B 70 - 79 分 3 點
+            C 60 - 69 分 2 點
+            D 50 - 59 分 1 點
+            E 49 分以下 0 點 
+
+   ex. 國文:79分 2學分 && 數學:60分 3學分
+   => (3*2 + 2*3) / 5 = 2.4(gpa);  
+        </pre>
+    </div>
+    </aside>
     <div id='box'>
     <table>
     <tr>
@@ -153,29 +190,39 @@ p{
     var arr2 = [];
     var gpa = 0;
     var j=0;
-    var arr3 = [1,2,3,4,5,6,8,9,7,9,798,789,789,89,7897,987,897,897,987]
     for(i=0;i<otext.length;i++){
         otext[i].index = i
         end = otext[otext.length-1]
+        end_2 = otext[otext.length-2]
     otext[i].onkeydown = function(ev){
         ev = window.event || ev;
         if(ev.keyCode==13){
             otext[this.index+1].focus();
-            //obt[0].focus();
         }
         if(ev.keyCode==46){
-            otext[this.index-1].focus();
+            deltext();
+            end_2.focus();
+            
         }
     }
      end.onkeydown = function(ev){
         ev = window.event || ev;
         if(ev.keyCode==13){
             obt[0].focus();
-     }}
+     }
+        if(ev.keyCode==46){
+            obt[1].focus();
+        }
+    }
+    
      }
     function addtext(){
         //<td><p id='text1'>成績<input type='text' class='text'></p></td>
         //<td><p id='text2'>學分數<input type='text' class='text'></p></td>
+        var otext = document.getElementsByClassName('text');
+        for(i=0;i<otext.length;i++){
+            otext.index = otext[i];
+        }
         var newtr = document.createElement('tr')
         var newtd1 = document.createElement('td')
         var newtd2 = document.createElement('td')
@@ -206,19 +253,21 @@ p{
                 ev = window.event;
                 if(ev.keyCode == 13){
             newinput2.focus()}
+                if(ev.keyCode == 46){
+                deltext();
+                }
             }
-    
+            end =  newinput2[newinput2-1]
             newinput2.index = i;
             newinput2.onkeydown = function(ev){
                 ev = window.event;
                 if(ev.keyCode == 13){
             obt[0].focus()}
+            if(ev.keyCode == 46){
+                deltext();
+                }
             }
-            obt[0].onkeydown = function(ev){
-        ev = window.event;
-        if(ev.keyCode == 13){
-            newinput1.focus();
-        }
+            
     }
 
         /* otable += '<td>'
@@ -226,14 +275,22 @@ p{
         otable += '</td>'
         otable += '<td><p id="text2">學分數<input type="text" class="text"></p></td>'
         otable += '</tr>' */
-    }
-    function deltext(){
-
+    function deltext(length){
+        var otext = document.getElementsByClassName('text');
+        for(i=1;i<=2;i++){
+        var end = otext[otext.length-1]
+        var otext_parentnode = end.parentNode;
+        otext_parentnode.remove(end);
+        }
     }
     for(i=0;i<=obt.length;i++){
     
     obt[0].onclick = function(){
         addtext();
+        for(i=0;i<otext.length;i++){
+            end = otext[otext.length-2]
+            end.focus();
+        }
     }
     obt[1].onclick = function(){
         deltext();
@@ -270,7 +327,7 @@ p{
 B 70 - 79 分 3 點
 C 60 - 69 分 2 點
 D 50 - 59 分 1 點
-E 49 分以下 0 點 */
+E 49 分以下 0 點  */
         gpa = 0;
         a = 0;
         for(i=0;i<otext.length;i+=2){
@@ -320,7 +377,6 @@ E 49 分以下 0 點 */
     }
     
     
-    
     function removeTextBox(form) {
     if (textNumber > 1) { // If there's more than one text box
         // Remove the last one added
@@ -328,12 +384,7 @@ E 49 分以下 0 點 */
         textNumber--;
     }
     }
-    //--> */
+//--> */
     </script>
 </html>
-
-
-
-
-
 
