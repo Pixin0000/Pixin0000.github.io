@@ -1,0 +1,1 @@
+<p>This is the table for our class . It also has some informations about the teacher's office or the course informations.</p>
