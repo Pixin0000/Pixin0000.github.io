@@ -6,6 +6,7 @@
     <meta name="keywords" contents="智動科,科學會,台北工專,智慧自動化工程" />
     <meta name="description" contents="課表,在學資訊">
     <meta name="robots" content="ALL">
+    <script src="https://kit.fontawesome.com/2f590ae985.js" crossorigin="anonymous"></script>
     <title>pixin的程式練習網站</title>
     <style type="text/css">
         * {
@@ -23,7 +24,6 @@
         }
 
         body {
-            color: lawngreen;
             margin: 0 auto;
             font-family: sans-serif, "微軟正黑體";
         }
@@ -33,7 +33,7 @@
             background: -o-linear-gradient(bottom right,yellow,red);
             background: -moz-linear-gradient(bottom right,yellow,rgb(70, 41, 41));
             background: linear-gradient(to bottom right,yellow,rgb(34, 204, 204));
-            padding: 3%;
+            padding: 2%;
             text-align: center;
             color: ghostwhite;
         }
@@ -54,8 +54,8 @@
             margin-left:5%;
         }
         #main_nav a{
-            font-size: 25px;
-            color:rgb(123, 41, 179);
+            font-size: 1.5rem;
+            color:rgb(102, 0, 170);
         }
 
         #main-article {
@@ -87,7 +87,6 @@
             background-color: aqua;
             padding: 20px;
             float: none;
-            font-size: 30px;
             color: rgb(1, 0, 75);
             clear: both;
             margin:0px;
@@ -96,7 +95,9 @@
         #B ul li {
             display: inline;
             white-space: nowrap;
-            margin:2.2%;
+            font-size: 30px;
+            margin:2.2rem;
+
         }
         #main-article #bt{
             position:relative;
@@ -109,7 +110,7 @@
         }
         #main-article #bt2{
             position:relative;
-            left:1800px;
+            left:100%;
             top:-500px;
             border-radius: 5;
             width:50px;
@@ -123,7 +124,8 @@
         <header id="main-header">
             <p>pixin的練習用網站</p>
         </header>
-        <nav id="main_nav">
+        <div id="main_nav">
+            <i class="fas fa-bars"></i>
             <ul>
                 <li><a href="https://pixin0000.github.io/table/index.html" target="_blank" id="專二課表">專二課表</a></li>     
                 <li><a href="https://iae.ntut.edu.tw/index.php" target="_blank">更詳盡資訊</a></li>      
@@ -133,18 +135,12 @@
                 <li><a href="http://pixin_web.nctu.me/score_calculate/index.html" target="_blank">計算成績</a></li>
                 <li><a href="https://github.com/Pixin0000/pixin0000.github.io" target="_blank">GitHub</a></li>
             </ul>
-        </nav>
-        <article id="main-article">
+        </div>
+        <div id="main-article">
             <img class='pic' src="photo/img-1.jpg">
             <input type="button" id="bt" value="上一張"/>
             <input type="button" id="bt2" value="下一張"/>
-            <!-- <aside id="main-aside">
-                <p>影音檔</p>
-                <iframe width="580" height="300" src="https://www.youtube.com/embed/FE40N7DOPAQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <iframe width="580" height="300" src="https://www.youtube.com/embed/j83OVgv6woA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              <img src=https://media.giphy.com/media/OfXKySrn0Ej4s/200.gif height=250 width=400>
-            </aside> -->
-        </article>
+        </div>
         <footer id="main-footer">
             <div id="B">
                 <ul>
@@ -161,6 +157,8 @@
        //alert(document.body.scrollWidth) 1903
         var onav = document.getElementById('main_nav');
         var oul = onav.getElementsByTagName("ul")[0];
+        var ofooter = document.getElementById('main-footer')
+        var oul1 = ofooter.getElementsByTagName("ul")[0];
         var oa = oul.getElementsByTagName("a");
         var opic = document.getElementsByClassName('pic')[0];
         var index = 1;
@@ -198,6 +196,26 @@
                 index=-1;
             }
     }
+
+        var clientwidth = document.documentElement.clientWidth;
+// 封裝一個函式
+        function font(clientwidth){
+            if(clientwidth<1903){
+                oul.style.display = 'none'
+                oul1.style.display = 'none'
+                
+
+            }
+            else{
+                oul.style.display = 'block'
+                oul1.style.display = 'block'
+            }
+        }
+        window.onresize = function(){
+            var clientwidth = document.documentElement.clientWidth;
+            font(clientwidth);
+        }
+</script>
     </script>
 
 </html>

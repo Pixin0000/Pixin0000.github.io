@@ -96,11 +96,11 @@
     #introduction{
         border:1px solid;
         width:30%;
-        height:70%;
+        height:50%;
     }
     #introduction pre{
         color:darkcyan;
-        font-size:160%;
+        font-size:1.4rem;
     }
 </style>
 </head>
@@ -372,6 +372,26 @@ E 49 分以下 0 點  */
     alert(gpa);
         }
     }
+    var opre = document.getElementsByTagName('pre')[0];
+    var html = document.documentElement;
+    var temp = opre.style.fontSize;
+    var width = document.documentElement.clientWidth;
+    function fontS(width){
+        if(width<1920){
+			// 獲取 html 的寬
+ 			var hW = html.offsetWidth;
+			// 計算字型大小，這裡是 html 寬的五十分之一
+ 			var hS = hW / 100;
+			// 給剛開始時的 html 設定字型大小	
+ 			opre.style.fontSize = hS + "px";}
+
+        else{
+            opre.style.fontSize = temp;
+        }
+		}
+		// 當視窗大小改變時執行函式 
+        
+		window.onresize = function(){fontS(width);}
  /*    var textNumber = 1;
     var bt = document.getElementById('calcu');
     bt.onclick= function(){
