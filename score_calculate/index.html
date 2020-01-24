@@ -96,11 +96,15 @@
     #introduction{
         border:1px solid;
         width:30%;
-        height:50%;
+        height:60%;
+        
     }
-    #introduction pre{
+    #introduction p{
+        position: relative;
+        left:0px;
+        top:0px;
         color:darkcyan;
-        font-size:1.4rem;
+        font-size:20px;
     }
 </style>
 </head>
@@ -109,23 +113,23 @@
     <aside>
         <div id='introduction'>
         <h1>使用說明</h1>
-        <pre>
-1.輸入完一筆資料按下enter會自動換行
-2.若資料行數不夠在最後一排按下enter鍵即可新增
-3.若新增的排不需要可按下delete刪除
-4.最下方的兩個鈕可以分別計算平均與gpa
-5.若有空行也沒關係 不影響計算結果
-    GPA計算參考:
-
-            A 80 - 100 分 4 點
-            B 70 - 79 分 3 點
-            C 60 - 69 分 2 點
-            D 50 - 59 分 1 點
-            E 49 分以下 0 點 
-
-   ex. 國文:79分 2學分 && 數學:60分 3學分
-   => (3*2 + 2*3) / 5 = 2.4(gpa);  
-        </pre>
+        <p>
+1.輸入完一筆資料按下enter會自動換行</br>
+2.若資料行數不夠在最後一排按下enter鍵即可新增</br>
+3.若新增的排不需要可按下delete刪除</br>
+4.最下方的兩個鈕可以分別計算平均與gpa</br>
+5.若有空行也沒關係 不影響計算結果</br>
+    GPA計算參考:</br>
+</br>
+        A 80 - 100 分 4 點</br>
+        B 70 - 79 分 3 點</br>
+        C 60 - 69 分 2 點</br>
+        D 50 - 59 分 1 點</br>
+        E 49 分以下 0 點 </br>
+    </br>
+ex. 國文:79分 2學分 && 數學:60分 3學分</br>
+=> (3*2 + 2*3) / 5 = 2.4(gpa);  
+        </p>
     </div>
     </aside>
     <div id='box'>
