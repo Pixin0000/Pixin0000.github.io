@@ -65,13 +65,13 @@
     }
     #bt5{
         position:relative;
-        left:-130px;
-        top:230px;
+        left:-50px;
+        top:100px;
     }
     #bt6{
         position:relative;
-        left:200px;
-        top:230px;
+        left:120px;
+        top:100px;
     }
     header{
         background: -webkit-linear-gradient(yellow,red);
@@ -347,11 +347,6 @@ ex. 國文:79分 2學分 && 數學:60分 3學分</br>
         return(arr);
     }
     obt1[1].onclick = function(){
-/* A 80 - 100 分 4 點
-B 70 - 79 分 3 點
-C 60 - 69 分 2 點
-D 50 - 59 分 1 點
-E 49 分以下 0 點  */
         gpa = 0;
         a = 0;
         arr = arr();
@@ -381,22 +376,6 @@ E 49 分以下 0 點  */
     var html = document.documentElement;
     var temp = opre.style.fontSize;
     var width = document.documentElement.clientWidth;
-    function fontS(width){
-        if(width<1920){
-			// 獲取 html 的寬
- 			var hW = html.offsetWidth;
-			// 計算字型大小，這裡是 html 寬的五十分之一
- 			var hS = hW / 100;
-			// 給剛開始時的 html 設定字型大小	
- 			opre.style.fontSize = hS + "px";}
-
-        else{
-            opre.style.fontSize = temp;
-        }
-		}
-		// 當視窗大小改變時執行函式 
-        
-		window.onresize = function(){fontS(width);}
  /*    var textNumber = 1;
     var bt = document.getElementById('calcu');
     bt.onclick= function(){

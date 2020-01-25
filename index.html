@@ -54,11 +54,11 @@
         }
         #main_nav ul li{
             display:inline;
-            margin-left:5%;
+            margin-left:3%;
         }
         #main_nav a{
             font-size: 1.5rem;
-            color:rgb(102, 0, 170);
+            color:rgb(57, 54, 146);
         }
         #main_nav i{
             display: none;
@@ -111,6 +111,7 @@
         #main-article #bt{
             position:relative;
             left:0px;
+            display:none;
             top:-500px;
             border-radius: 5;
             width:50px;
@@ -119,7 +120,8 @@
         }
         #main-article #bt2{
             position:relative;
-            left:90%;
+            display: none;
+            left:94%;
             top:-500px;
             border-radius: 5;
             width:50px;
@@ -183,7 +185,7 @@
             </ul>
         </div>
         <div id="main-article">
-            <img class='pic' src="photo/img-1.jpg">
+            <img class='pic' src="photo/img-5.jpg">
             <input type="button" class='pic' id="bt" value="上一張"/>
             <input type="button" class='pic' id="bt2" value="下一張"/>
         </div>
@@ -233,7 +235,7 @@
             this.style.color = "rgb(123, 41, 179)";
         }
     }
-        start();
+        //start();
     function start(){
         if(timer == null){
         timer = setInterval(plus,3000);}

@@ -155,7 +155,7 @@ h1 p{
             <td></td>
             <td><a href="##">英文</a></td>
             <td><a href="##">物理實驗</a></td>
-            <td><a href="##">製造學(暫定)</a></td>
+            <td><a href="##">製造學</a></td>
             <td><a href="##">程式設計與實習</a></td>
         </tr>
         <tr>
@@ -202,6 +202,15 @@ h1 p{
     var num = 0;
     var arr = [];
     
+
+    for(i=0;i<oa.length;i++){
+        oa[i].onclick = function(){
+                for(j=0;j<oa.length;j++){
+                    oa[j].index = j;
+                    oa[this.index].innerHTML= 'bb'
+                }
+            }
+        }
     /* for(var i=0;i<=54;i++){
         otd[i].style.color = 'black' ;
         otd[i].onmousemove = function(){
@@ -211,7 +220,7 @@ h1 p{
             this.style.color = 'black';
         }
     } */
-    for(var i=0; i<oa.length ;i++){
+    /* for(var i=0; i<oa.length ;i++){
         oa[i].index = i;
         oa[i].style.color = 'black';
         oa[i].onmouseover = function(){
@@ -220,7 +229,24 @@ h1 p{
         oa[i].onmouseout = function(){
             oa[this.index].style.color = 'black';
         }
+    } */
+    otable.onclick = function(ev){
+        ev = event || ev;
+        var self = ev.target || ev.srcElement;
+        var oinput = document.createElement('input') 
+        oinput.type = 'text';
+        oinput.value = oinput.innerHTML;
+        self.innerHTML = '';
+        self.appendChild(oinput)
+        oinput.focus()
+        ev.stopPropagation();
+        
+        oinput.onkeydown = function(){
+            ev = event || ev;
+            if(ev.keyCode == 13){
+        self.innerHTML = oinput.value;}
     }
+}
 /*     for(var i=0;i<=47;i++){
     otd = otable.getElementsByTagName('td');
     oa = document.createElement('a');
