@@ -266,6 +266,12 @@
             }
         }
         var is_true = false;
+        var clientwidth = document.documentElement.clientWidth
+        if(clientwidth <= 1100){
+            oul.style.display = 'none'
+                oul1.style.display = 'none'
+                oi.style.display = 'block'
+        }
         window.onresize = function(){
             var clientwidth = document.documentElement.clientWidth;
             font(clientwidth);

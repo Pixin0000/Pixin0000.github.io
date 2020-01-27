@@ -96,7 +96,7 @@
     #introduction{
         border:1px solid;
         width:30%;
-        height:75%;
+        height:70%;
         
     }
     #introduction p{
@@ -333,7 +333,7 @@ ex. 國文:79分 2學分 && 數學:60分 3學分</br>
             alert('請輸入數值')
         }
         else{
-            alert(num);
+            alert(Math.round(num*100)/100);
         }
     }
     function arr(){
@@ -354,7 +354,9 @@ ex. 國文:79分 2學分 && 數學:60分 3學分</br>
         num = num / a;
         return(arr);
     }
-    obt1[1].onclick = function(){
+    arr = arr();
+    var obt6 = document.getElementById('bt6')
+    bt6.onclick = function(){
         gpa = 0;
         a = 0;
         arr = arr();
