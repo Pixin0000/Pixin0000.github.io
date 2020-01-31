@@ -336,7 +336,8 @@ ex. 國文:79分 2學分 && 數學:60分 3學分</br>
             alert(Math.round(num*100)/100);
         }
     }
-    function arr(){
+}
+        function sum(){
         num = 0;
         a=0;
         for(i=0;i<otext.length;i+=2){
@@ -354,12 +355,12 @@ ex. 國文:79分 2學分 && 數學:60分 3學分</br>
         num = num / a;
         return(arr);
     }
-    arr = arr();
+    var arr = sum();
     var obt6 = document.getElementById('bt6')
-    bt6.onclick = function(){
-        gpa = 0;
+    obt6.onclick = function(){
+         gpa = 0;
         a = 0;
-        arr = arr();
+        arr = sum();
         for(i=0;i<otext.length;i+=2){
             otext1_value = Number(otext[i].value);
             a += arr[i+1];
@@ -385,8 +386,8 @@ ex. 國文:79分 2學分 && 數學:60分 3學分</br>
         else{
             alert(gpa);
         }
+
     }
-}
  /*    var textNumber = 1;
     var bt = document.getElementById('calcu');
     bt.onclick= function(){

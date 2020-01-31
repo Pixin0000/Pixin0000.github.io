@@ -1549,7 +1549,7 @@ input, select, textarea {
 			transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out;
 			padding: 4.5rem 2.5rem 1.5rem 2.5rem ;
 			position: relative;
-			width: 40rem;
+			width: 45rem;
 			max-width: 100%;
 			background-color: rgba(27, 31, 34, 0.85);
 			border-radius: 4px;
@@ -1670,7 +1670,10 @@ input, select, textarea {
 		.inner p{
 			color:rgba(3, 248, 228, 0.8);
 		}
-		#intro pre{
+		#intro{
+			width:1000px;
+		}
+		#intro p{
 			font-size:5%px;
 			position:relative;
 		}

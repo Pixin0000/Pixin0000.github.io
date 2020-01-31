@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>查字系統</title>
+    <style type="text/css">
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #box {
+            width: 800px;
+            height: 150%;
+            margin: 100px;
+            margin-left: 30%;
+            border: gray solid 1px;
+            position: relative;
+        }
+
+        #text1 {
+            margin: 20px;
+            height: 25px;
+            width: 150px;
+            margin-left: 30px;
+            text-align: center;
+        }
+
+        #text2 {
+            margin: 20px;
+            height: 25px;
+            width: 150px;
+            margin-left: 30px;
+            text-align: center;
+            position: relative;
+            left:65%;
+            top:-70px;
+        }
+
+        a {
+            text-decoration: none;
+            display: inline;
+        }
+
+        .button1 {
+            background-color: black;
+            color: white;
+            font-size: 20px;
+            line-height: 30px;
+            width: 50px;
+            text-align: center;
+            margin: 5px;
+            margin-left: 7%;
+            position: absolute;
+            left: 130px;
+            top: 15px;
+        }
+
+        .button2 {
+            background-color: black;
+            color: white;
+            font-size: 20px;
+            line-height: 30px;
+            width: 50px;
+            text-align: center;
+            margin: 5px;
+            margin-left: 70%;
+            position: absolute;
+            left: 145px;
+            top: 13px;
+        }
+
+        p {
+            width: 400px;
+            font-size: 20px;
+            font-family: "微軟正黑體";
+            margin-left: 5px;
+
+        }
+
+        span {
+            background-color: blue;
+            text-decoration: crimson;
+            color: cornsilk;
+        }
+        #text3{
+            width:300px;
+            height:50px;
+            position: relative;
+            left:30%;
+            top:50%;
+            text-align: center;
+            
+
+
+        }
+        #content{
+            text-align: center;
+            position: relative;
+            left:23%;
+            height: 100%;
+        }
+    </style>
+
+<body>
+    <div id=box>
+        <input type="text" id="text1" placeholder="搜尋文字">
+        <div><a href="#" type='button' class='button1'>查找</a></div>
+        <input type="text" id="text2" placeholder="替代文字">
+        <div><a href="#" class='button2'>替代</a></div>
+        <input type="text" id='text3' placeholder="文章內容">
+        <p id=content>
+
+        </p>
+    </div>
+    <script type="text/javascript" src="jquery.js"></script>;
+    <script>
+        var obox = document.getElementById("box");
+        var otext1 = document.getElementById("text1")
+        var otext2 = document.getElementById("text2")
+        var otext3 = document.getElementById('text3')
+        var oa1 = obox.getElementsByClassName('button1')[0];
+        var oa2 = obox.getElementsByClassName('button2')[0];
+        var ocontent = document.getElementById('content');
+        var op = document.getElementsByTagName('p')[0]
+        var content = ocontent.innerHTML;
+        otext3.onkeydown = function(ev){
+            ev = window.event || ev;
+
+            var br = '<br />'
+            var a = otext3.value.split(' ').join(br)
+            if(ev.keyCode == 13){
+                ocontent.innerHTML += '<br />'
+                ocontent.innerHTML += a;
+            }
+        }
+        oa1.onclick = function () {
+            //var style = getComputedStyle(oa1)
+            //alert(style.color)
+            sreachvalue = otext1.value;
+            //ocontent.innerHTML = content;
+            if (!sreachvalue) return;
+            var str = '<span>' + sreachvalue + '</span>'
+            console.log(str);
+            ocontent.innerHTML = ocontent.innerHTML.split(sreachvalue).join(str);
+        }
+        oa2.onclick = function () {
+            oldvalue = otext1.value;
+            newvalue = otext2.value;
+            //ocontent.innerHTML = content;
+            var str1 = '<span>' + newvalue + '</span>'
+            if (!oldvalue || !newvalue) return;
+            ocontent.innerHTML = ocontent.innerHTML.split(oldvalue).join(str1);
+        }
+        otext1.onkeydown = function(ev){
+            ev = window.event || ev;
+            if(ev.keyCode==13){
+                oa1.click();
+
+            }
+        }
+
+        otext2.onkeydown = function(ev){
+            ev = window.event || ev;
+            if(ev.keyCode==13){
+                oa2.click();
+
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
