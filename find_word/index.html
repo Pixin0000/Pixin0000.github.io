@@ -128,7 +128,6 @@
         var content = ocontent.innerHTML;
         otext3.onkeydown = function(ev){
             ev = window.event || ev;
-
             var br = '<br />'
             var a = otext3.value.split(' ').join(br)
             if(ev.keyCode == 13){
@@ -139,6 +138,8 @@
         oa1.onclick = function () {
             //var style = getComputedStyle(oa1)
             //alert(style.color)
+            str = '';
+            str1 = ''
             sreachvalue = otext1.value;
             //ocontent.innerHTML = content;
             if (!sreachvalue) return;
@@ -149,6 +150,7 @@
         oa2.onclick = function () {
             oldvalue = otext1.value;
             newvalue = otext2.value;
+            str1 = ''
             //ocontent.innerHTML = content;
             var str1 = '<span>' + newvalue + '</span>'
             if (!oldvalue || !newvalue) return;
