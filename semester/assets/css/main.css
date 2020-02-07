@@ -1563,6 +1563,10 @@ input, select, textarea {
 				transform: translateY(0);
 				opacity: 1;
 			}
+			article iframe{
+				width:100%;
+				height:1000px;
+			}
 
 			#main article .close {
 				display: block;

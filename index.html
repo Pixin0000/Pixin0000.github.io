@@ -8,6 +8,7 @@
     <meta name="description" contents="課表,在學資訊">
     <meta name="robots" content="ALL">
     <script src="https://kit.fontawesome.com/2f590ae985.js" crossorigin="anonymous"></script>
+    <script src="startmove.js"></script>
     <title>pixin的程式練習網站</title>
     <style type="text/css">
         * {
@@ -84,6 +85,7 @@
             height: 1000px;
             margin-bottom: 0px;
             margin: 0px;
+            opacity:0.1;
         }
 
         #main-aside {
@@ -115,27 +117,7 @@
 
         }
 
-        #main-article #bt {
-            position: relative;
-            left: 0px;
-            display: none;
-            top: -500px;
-            border-radius: 5;
-            width: 50px;
-            height: 50px;
-            background-color: chartreuse;
-        }
 
-        #main-article #bt2 {
-            position: relative;
-            display: none;
-            left: 94%;
-            top: -500px;
-            border-radius: 5;
-            width: 50px;
-            height: 50px;
-            background-color: chartreuse;
-        }
 
         #if1100 {
             padding: 0px;
@@ -169,6 +151,51 @@
             text-align: center;
             line-height: 50px;
         }
+        #main-article i{
+            position:relative;
+            left:2%;
+            top:-500px;
+            display: block;
+            opacity: 0.01;
+        }
+        #main-article .fa-angle-right{
+            position: relative;
+            left:93%;
+            top:-500px;
+            display: block;
+            opacity: 0.01;
+            
+        }
+        #box{
+            width:100%;
+            height:1000px;
+            position: absolute;
+            left:0px;
+            top:285px;
+        }
+        #right-block{
+            background-color: rgba(82, 82, 82, 0.712);
+            width:10%;
+            height:1000px;
+            position: relative;
+            left:90%;
+            top:0%;
+            float:left;
+            display: block;
+            opacity: 0.1;
+
+        }
+        #left-block{
+            background-color: rgba(82, 82, 82, 0.712);
+            width:10%;
+            height:1000px;
+            position: relative;
+            left:0%;
+            top:0%;
+            display: block;
+            opacity: 0;
+
+        }
     </style>
 </head>
 
@@ -199,10 +226,14 @@
             <li><a href="https://github.com/Pixin0000/pixin0000.github.io" target="_blank">GitHub</a></li>
         </ul>
     </div>
+    <div id='box'>
+    <div id='right-block'></div>
+    <div id='left-block'></div>
+    </div>
     <div id="main-article">
         <img class='pic' src="photo/img-5.jpg">
-        <input type="button" class='pic' id="bt" value="上一張" />
-        <input type="button" class='pic' id="bt2" value="下一張" />
+        <i class="fa fa-3x fa-angle-left"></i>
+        <i class="fa fa-3x fa-angle-right"></i>
     </div>
     <footer id="main-footer">
         <div id="B">
@@ -217,6 +248,9 @@
 
 </body>
 <script>
+    window.onload = function(){
+        opic.style.opacity = Move(100);
+    }
     //alert(document.body.scrollHeight) 1463 
     //alert(document.body.scrollWidth) 1903
     var oheader = document.getElementById('main-header')
@@ -233,6 +267,64 @@
     var odiv = document.getElementById('if1100');
     var oul2 = odiv.getElementsByTagName('ul')[0];
     var oli = oul2.getElementsByTagName('li');
+    var right = document.getElementById('right-block')
+    var left = document.getElementById('left-block')
+    var right_mark = document.getElementsByClassName('fa-angle-right')[0]
+    var left_mark = document.getElementsByClassName('fa-angle-left')[0]
+    
+    right.onmouseenter = function(){
+        startMove(this,'opacity',1000)
+        startMove(right_mark,'opacity',1000)
+    }
+    right.onmouseleave = function(){
+        startMove(this,'opacity',0.1)
+        startMove(right_mark,'opacity',0.1)
+    }
+    right.onclick = function(){
+        index++;
+        console.log(index);
+        opic.src = "photo/" + opic_arr[index];
+        if (index == 7) {
+            index = -1;
+        }
+        startMove(opic,'opacity',100)
+    }
+    left.onclick = function(){
+        index--;
+        console.log(index);
+        opic.src = "photo/" + opic_arr[index];
+        if (index <= 0) {
+            index = 8;
+        }
+    }
+    left.onmouseenter = function(){
+        startMove(this,'opacity',1000)
+        startMove(left_mark,'opacity',1000)
+    }
+    left.onmouseleave = function(){
+        startMove(this,'opacity',0.1)
+        startMove(left_mark,'opacity',0.1)
+    }
+    opic.onmousemove = function(){
+        Move(100)
+        }
+     var timer = null;
+     var alpha = 30
+    function Move(target){
+        clearInterval(timer);
+
+        var speed = 10;
+        speed = alpha<target ? speed : -speed;
+        timer = setInterval(function(){
+            if(opic.style.opacity*100 == target){
+                clearInterval(timer);
+            }
+            else{
+                alpha += speed;
+                opic.style.opacity = alpha/100;
+            }
+        },30)
+    }
     var opic_arr = [
         'img-1.jpg',
         'img-2.jpg',
@@ -348,12 +440,27 @@
         clearInterval(obj.timer)
         var speed = 0;
         var current = 0;
-        obj.timer = setInterval(function () {
-            current = getstyle(obj, att);
+        obj.timer = setInterval(function(){
+            if(att=='opacity'){
+                current = parseInt(getstyle(obj,att)*100)
+            }
+            else{
+                current = getstyle(obj, att);
+            }
             speed = (target - current) / 7
             speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
             current += speed;
-            current = current == target ? clearInterval(obj.timer) : obj.style[att] = current + 'px'
+            if(current == target){
+                clearInterval(obj.timer);
+            }
+            else{
+                if(att == 'opacity'){
+                    obj.style.opacity = current/100;
+                }
+                else{
+                    obj.style[att] = current + 'px';
+                }
+            }
         }, 30)
     }
     function getstyle(obj, att) {
