@@ -454,11 +454,13 @@
     }
     for(i=0;i<oli.length;i++){
             oli[i].index = i;
-            oli[i].onclick = function(){
-                for(j=0;j<oa.length;j++){
-                    oa[j].click();
-                }
-            }
+            oli[i].onclick = function(ev){
+                ev = event
+                ev.stopPropagation();
+                for(i=0;i<oa.length;i++){
+                    oa[i].index = i;
+                    oa[this.index].click();
+                }}
             oli[i].onmousemove = function(){
                 oli[this.index].style.backgroundColor="gray"
                 oa1[this.index].style.color='white'
@@ -467,7 +469,7 @@
                 oli[this.index].style.backgroundColor="black"
                 oa1[this.index].style.color = "rgb(123, 41, 179)"
             }
-        }
+    }
 </script>
 
 </html>
