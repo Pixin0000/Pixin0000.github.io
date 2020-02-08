@@ -173,7 +173,7 @@
             left:0px;
             top:285px;
         }
-        #right-block{
+         #right-block{
             background-color: rgba(82, 82, 82, 0.712);
             width:10%;
             height:1000px;
@@ -193,9 +193,9 @@
             left:0%;
             top:0%;
             display: block;
-            opacity: 0;
+            opacity: 0.1;
 
-        }
+        } 
     </style>
 </head>
 
@@ -215,6 +215,11 @@
             <li><a href="https://github.com/Pixin0000/pixin0000.github.io" target="_blank">GitHub</a></li>
         </ul>
     </div>
+    
+    <div id='box'>
+    <div id='right-block'></div>
+    <div id='left-block'></div>
+    </div>
     <div id='if1100'>
         <ul>
             <li><a href="https://pixin0000.github.io/table/index.html" target="_blank" id="專二課表">專二課表</a></li>
@@ -223,12 +228,8 @@
             <li><a href="https://pixin0000.github.io/find_word/index.html" target="_blank">搜尋關鍵字</a></li>
             <li><a href="http://pixin_web.nctu.me/semester/index.html" target="_blank">專二專案</a></li>
             <li><a href="http://pixin_web.nctu.me/score_calculate/index.html" target="_blank">計算成績</a></li>
-            <li><a href="https://github.com/Pixin0000/pixin0000.github.io" target="_blank">GitHub</a></li>
+            <li><a href="https://github.com/Pixin0000/pixin0000.github.io" target="_blank">GitHub</a></li> 
         </ul>
-    </div>
-    <div id='box'>
-    <div id='right-block'></div>
-    <div id='left-block'></div>
     </div>
     <div id="main-article">
         <img class='pic' src="photo/img-5.jpg">
@@ -256,16 +257,17 @@
     var oheader = document.getElementById('main-header')
     var onav = document.getElementById('main_nav');
     var oul = onav.getElementsByTagName("ul")[0];
+    var oa = oul.getElementsByTagName("a");
     var ofooter = document.getElementById('main-footer')
     var oul1 = ofooter.getElementsByTagName("ul")[0];
-    var oa = oul.getElementsByTagName("a");
     var opic = document.getElementsByClassName('pic')[0];
-    var oi = document.getElementsByClassName('fas')[0];
+    var oi = document.getElementsByClassName('fa-bars')[0];
     var index = 1;
     var obt = document.getElementById('bt');
     var timer = null;
     var odiv = document.getElementById('if1100');
     var oul2 = odiv.getElementsByTagName('ul')[0];
+    var oa1 = oul2.getElementsByTagName('a');
     var oli = oul2.getElementsByTagName('li');
     var right = document.getElementById('right-block')
     var left = document.getElementById('left-block')
@@ -280,21 +282,37 @@
         startMove(this,'opacity',0.1)
         startMove(right_mark,'opacity',0.1)
     }
+    var index = 0 ;
     right.onclick = function(){
-        index++;
-        console.log(index);
+        if(index<=7&&index>=-1){
+            index++;
+            }
         opic.src = "photo/" + opic_arr[index];
-        if (index == 7) {
+        console.log(index);
+        if(index == 7){
+            index--
             index = -1;
         }
-        startMove(opic,'opacity',100)
+        if(index == 8){
+            index = 0;
+        }
+        
+        for(i=0;i<opic.length;i++){
+            opic[i].index = i
+        startMove(opic.index,'opacity',0)
+        }
     }
     left.onclick = function(){
-        index--;
+        if(index<=8&&index>0){
+            index--;
+        }
         console.log(index);
         opic.src = "photo/" + opic_arr[index];
-        if (index <= 0) {
-            index = 8;
+        if (index == 0){
+            index = 8
+        }
+        if(index == 7){
+            index = 7;
         }
     }
     left.onmouseenter = function(){
@@ -304,10 +322,7 @@
     left.onmouseleave = function(){
         startMove(this,'opacity',0.1)
         startMove(left_mark,'opacity',0.1)
-    }
-    opic.onmousemove = function(){
-        Move(100)
-        }
+    } 
      var timer = null;
      var alpha = 30
     function Move(target){
@@ -335,12 +350,23 @@
         'img-7.jpg',
         'img-8.jpg'
     ]
-    for (var i = 0; i < oa.length; i++) {
+    for (i = 0; i < oa.length; i++) {
         oa[i].style.color = "rgb(123, 41, 179)";
         oa[i].onmousemove = function () {
+            console.log(i);
             this.style.color = "white";
         }
         oa[i].onmouseout = function () {
+            this.style.color = "rgb(123, 41, 179)";
+        }
+    }
+    for (i = 0; i < oa1.length; i++) {
+        oa1[i].style.color = "rgb(123, 41, 179)";
+        oa1[i].onmousemove = function () {
+            console.log(i);
+            this.style.color = "white";
+        }
+        oa1[i].onmouseout = function () {
             this.style.color = "rgb(123, 41, 179)";
         }
     }
@@ -358,37 +384,42 @@
             index = -1;
         }
     }
+    function font(clientwidth){
+            if(clientwidth<1100){
+                oul.style.display = 'none'
+                oul1.style.display = 'none'
+                oi.style.display = 'block'
+            }
+            else{
+                oul.style.display = 'block'
+                oul1.style.display = 'block'
+                oi.style.display = 'none';
+                odiv.style.display = 'none'
 
-    var clientwidth = document.documentElement.clientWidth;
-    // 封裝一個函式
-    function font(clientwidth) {
-        if (clientwidth < 1100) {
-            oul.style.display = 'none'
-            oul1.style.display = 'none'
-            oi.style.display = 'block'
+            }
         }
-        else {
-            oul.style.display = 'block'
-            oul1.style.display = 'block'
-            oi.style.display = 'none';
-            odiv.style.display = 'none'
-
-        }
-    }
     var is_true = false;
     var clientwidth = document.documentElement.clientWidth
+    window.onresize = function(){
+            var clientwidth = document.documentElement.clientWidth;
+            font(clientwidth);
+        }
     if (clientwidth <= 1100) {
         oul.style.display = 'none'
         oul1.style.display = 'none'
+        oul2.style.display = 'block'
         oi.style.display = 'block'
-    }
-    window.onresize = function () {
-        var clientwidth = document.documentElement.clientWidth;
-        font(clientwidth);
-    }
+        /* right.style.display ='none'
+        right_mark.style.display='none'
+        left.style.display='none'
+        left_mark.style.display = 'none' */
+        right.style.position = -50; 
+        
+}
+
     document.onclick = function () {
         odiv.style.display = 'none'
-    }
+    } 
     function none() {
         odiv.style.display = 'none'
     }
@@ -396,10 +427,11 @@
         odiv.style.display = 'block'
     }
 
-    oi.onmouseover = function (ev) {
+     oi.onmouseover = function (ev) {
         ev = window.event
         ev.stopPropagation();
         for (i = 0; i < oli.length; i++) {
+            oli[i].style.height = 0;
             startMove(oli[i], 'height', 50)
         }
         is_true = true;
@@ -409,63 +441,33 @@
         else {
             odiv.style.display = 'block'
         }
-    }
+    } 
     oi.onclick = function (ev) {
+        for (i = 0; i < oli.length; i++) {
+            oli[i].style.height = 0;
+            startMove(oli[i], 'height', 50)
+        }
         ev = window.event
         ev.stopPropagation();
         is_true = !is_true
         is_true ? odiv.style.display = 'block' : odiv.style.display = 'none'
     }
-    /* oi.onmouseout = function(){
-        for(i=0;i<oli.length;i++){
-        startMove(oli[i],'height',0)}
-        setTimeout(none,500);} */
-    for (i = 0; i < oli.length; i++) {
-        oli[i].index = i;
-        oli[i].onclick = function () {
-            for (j = 0; j < oa.length; j++) {
-                oa[j].index = j
-                oa[this.index].click();
-            }
-        }
-        oli[i].onmousemove = function () {
-            block();
-            oli[this.index].style.backgroundColor = "gray"
-        }
-        oli[i].onmouseout = function () {
-            oli[this.index].style.backgroundColor = "black"
-        }
-    }
-    function startMove(obj, att, target) {
-        clearInterval(obj.timer)
-        var speed = 0;
-        var current = 0;
-        obj.timer = setInterval(function(){
-            if(att=='opacity'){
-                current = parseInt(getstyle(obj,att)*100)
-            }
-            else{
-                current = getstyle(obj, att);
-            }
-            speed = (target - current) / 7
-            speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
-            current += speed;
-            if(current == target){
-                clearInterval(obj.timer);
-            }
-            else{
-                if(att == 'opacity'){
-                    obj.style.opacity = current/100;
-                }
-                else{
-                    obj.style[att] = current + 'px';
+    for(i=0;i<oli.length;i++){
+            oli[i].index = i;
+            oli[i].onclick = function(){
+                for(j=0;j<oa.length;j++){
+                    oa[j].click();
                 }
             }
-        }, 30)
-    }
-    function getstyle(obj, att) {
-        return parseInt(window.getComputedStyle(obj)[att])
-    }
+            oli[i].onmousemove = function(){
+                oli[this.index].style.backgroundColor="gray"
+                oa1[this.index].style.color='white'
+            }
+            oli[i].onmouseout = function(){
+                oli[this.index].style.backgroundColor="black"
+                oa1[this.index].style.color = "rgb(123, 41, 179)"
+            }
+        }
 </script>
 
 </html>
