@@ -36,7 +36,7 @@
 				<ul>
 					<li><a href="#intro">規則介紹</a></li>
 					<li><a href="#work">職業介紹</a></li>
-					<li><a href="#about">桌遊美術圖</a></li>
+					<li><a href="#about" id='dog'>桌遊美術圖</a></li>
 					<li><a href="#contact">相關資訊</a></li>
 				</ul>
 			</nav>
@@ -462,6 +462,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		var oleft = document.getElementById('left')
 		var oabout = document.getElementById("about")
 		var oimg1 = oabout.getElementsByTagName('img')[0]
+		var owork = document.getElementById('work')
+		var oimg2 = owork.getElementsByTagName('img')[0]
 		for (var i = 0; i <= 3; i++) {
 			oa[i].style.backgroundColor = 'rgba(0,0,0,0.5)';
 			oa[i].onmouseover = function () {
@@ -476,6 +478,15 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			oreset.focus();
 		}
 		var j = 3
+		var clientwidth = document.documentElement.clientWidth
+
+		for(var i=0;i<=3;i++){
+		oa[i].onclick = function(){
+		if(clientwidth > 800){
+			oright.style.left = "92.5%"
+			oimg1.style.height = "500px"
+			oimg2.style.height = "500px"
+		}}}
 		oright.onclick = function(){
 			if(j==3){
 				j = 1
@@ -494,7 +505,22 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			}
 			oimg1.src = "images/pic0" + j + ".jpg"  
 		}
-
+		var timer = null
+		var index = 0
+		function start() {
+        if (timer == null) {
+            timer = setInterval(plus, 3000);
+        }
+    }
+    function plus() {
+        if(index == 3){
+			index = 0
+		}
+		index++;
+        console.log(index);
+        oimg1.src = "images/pic0" + index + ".jpg"  
+		}
+		start()
 	</script>
 
 </body>

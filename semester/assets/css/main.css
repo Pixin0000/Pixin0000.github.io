@@ -1695,7 +1695,7 @@ input, select, textarea {
 		}
 		#about i{
 			size:10px;
-			color:rgba(158, 0, 0, 0.815);
+			color:rgba(121, 8, 226, 0.815);
 			position:relative;
 			top:250px;
 			float:none;
@@ -1713,5 +1713,5 @@ input, select, textarea {
 		#about #right{
 			position:relative;
 			top:-200px;
-			left:85%;
+			left:84.5%;
 		}
