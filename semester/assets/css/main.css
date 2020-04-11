@@ -1695,12 +1695,13 @@ input, select, textarea {
 		}
 		#about i{
 			size:10px;
+			color:rgba(117, 22, 195, 0.534);
 			position:relative;
 			top:250px;
 		}
 		#about img{
 			width:100%;
-			height:500px;
+			height:400px;
 		}
 		#about #left{
 			position:relative;
@@ -1708,5 +1709,5 @@ input, select, textarea {
 		}
 		#about #right{
 			position:relative;
-			left:90%;
+			left:88%;
 		}
