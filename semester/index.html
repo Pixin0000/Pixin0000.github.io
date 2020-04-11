@@ -147,7 +147,10 @@
 			<!-- About -->
 			<article id="about">
 				<h2 class="major">art</h2>
-				<span class="image main"><img src="images/pic04.jpg" alt="" /></span>
+				<span class="image main">
+				<i class="fas fa-3x fa-angle-left" id="left"></i>
+				<i class="fa fa-3x fa-angle-right" id="right"></i>
+				<img src="images/pic03.jpg" alt="" /></span>
 			
 				
 			</article>
@@ -156,7 +159,7 @@
 			<article id="contact">
 				<h2 class="major">about</h2>
 				<p>
-					價格:</br>
+					價格:未定價</br>
 					聯絡資訊:</br>
 					</br>
 					製作人員:</br>
@@ -172,7 +175,7 @@
 										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
 										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 										<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li> -->
-						<li><a href="https://github.com/Pixin0000/pixin0000.github.io" class="icon brands fa-github"
+						<li><a href="https://github.com/" class="icon brands fa-github"
 								target=_blank></a></li>
 						<li><a href="https://shopee.tw/user/account/profile/" class="fas fa-shopping-cart"
 								target=_blank></a></li>
@@ -454,7 +457,10 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		var oactions = document.getElementsByClassName('actions');
 		var obt = document.getElementsByClassName('primary')[0];
 		var oreset = document.getElementById('reset');
-
+		var oright = document.getElementById('right')
+		var oleft = document.getElementById('left')
+		var oabout = document.getElementById("about")
+		var oimg1 = oabout.getElementsByTagName('img')[0]
 		for (var i = 0; i <= 3; i++) {
 			oa[i].style.backgroundColor = 'rgba(0,0,0,0.5)';
 			oa[i].onmouseover = function () {
@@ -467,6 +473,25 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		obt.onclick = function () {
 			alert('發送成功');
 			oreset.focus();
+		}
+		var j = 3
+		oright.onclick = function(){
+			if(j==3){
+				j = 1
+			}
+			else{
+				j++
+			}
+			oimg1.src = "images/pic0" + j + ".jpg"  
+		}
+		oleft.onclick = function(){
+			if(j==1){
+				j = 3
+			}
+			else{
+				j--
+			}
+			oimg1.src = "images/pic0" + j + ".jpg"  
 		}
 
 	</script>

@@ -1686,5 +1686,24 @@ input, select, textarea {
 		}
 		#work span{
 			color:rgb(192, 177, 39);
-			position:center;
+			position:center;}
+		#work img{
+			height:500px;
+		}
+		#about i{
+			size:10px;
+			position:relative;
+			top:250px;
+		}
+		#about img{
+			width:628px;
+			height:500px;
+		}
+		#about #left{
+			position:relative;
+			left:0px;
+		}
+		#about #right{
+			position:relative;
+			left:578px;
 		}
