@@ -1698,7 +1698,6 @@ input, select, textarea {
 			color:rgba(121, 8, 226, 0.815);
 			position:relative;
 			top:250px;
-			float:none;
 		}
 		#about img{
 			float: none;

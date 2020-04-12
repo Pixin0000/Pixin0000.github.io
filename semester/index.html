@@ -461,6 +461,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		var oright = document.getElementById('right')
 		var oleft = document.getElementById('left')
 		var oabout = document.getElementById("about")
+		var oi = oabout.getElementsByTagName('i')[0]
 		var oimg1 = oabout.getElementsByTagName('img')[0]
 		var owork = document.getElementById('work')
 		var oimg2 = owork.getElementsByTagName('img')[0]
@@ -482,42 +483,48 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 		for(var i=0;i<=3;i++){
 		oa[i].onclick = function(){
-		if(clientwidth > 800){
+		if(clientwidth > 500){
 			oright.style.left = "92.5%"
 			oimg1.style.height = "600px"
 			oimg2.style.height = "500px"
+		
 		}}}
-		oright.onclick = function(){
-			if(j==14){
-				j = 4
-			}
-			else{
-				j++
-			}
-			oimg1.src = "images/pic0" + j + ".png"  
-		}
-		oleft.onclick = function(){
-			if(j==4){
-				j = 14
-			}
-			else{
-				j--
-			}
-			oimg1.src = "images/pic0" + j + ".png"  
-		}
 		var timer = null
 		var index = 4
 		function start() {
+			time = 3000
         if (timer == null) {
-            timer = setInterval(plus, 3000);
+            timer = setInterval(plus, time);
         }
     }
     function plus() {
+		time = 0
         if(index == 14){
 			index = 4
 		}
+		oright.onclick = function(){
+			if(index==14){
+				index = 4
+			}
+			else{
+				index++
+			}
+			time = 0
+			oimg1.src = "images/pic0" + index + ".png"
+		}
+		oleft.onclick = function(){
+			if(index==4){
+				index = 14
+			}
+			else{
+				index--
+			}
+			time = 0
+			oimg1.src = "images/pic0" + index + ".png"
+		}
 		index++;
         console.log(index);
+		console.log(time)
         oimg1.src = "images/pic0" + index + ".png"  
 		}
 		start()
