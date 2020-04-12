@@ -148,7 +148,7 @@
 			<article id="about">
 				<h2 class="major">art</h2>
 				<span class="image main">
-				<img src="images/pic03.jpg" alt="" />
+				<img src="images/pic04.png" alt="" />
 				<i class="fas fa-3x fa-angle-left" id="left"></i>
 				<i class="fa fa-3x fa-angle-right" id="right"></i>
 			</span>
@@ -477,48 +477,48 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			alert('發送成功');
 			oreset.focus();
 		}
-		var j = 3
+		var j = 4
 		var clientwidth = document.documentElement.clientWidth
 
 		for(var i=0;i<=3;i++){
 		oa[i].onclick = function(){
 		if(clientwidth > 800){
 			oright.style.left = "92.5%"
-			oimg1.style.height = "500px"
+			oimg1.style.height = "600px"
 			oimg2.style.height = "500px"
 		}}}
 		oright.onclick = function(){
-			if(j==3){
-				j = 1
+			if(j==14){
+				j = 4
 			}
 			else{
 				j++
 			}
-			oimg1.src = "images/pic0" + j + ".jpg"  
+			oimg1.src = "images/pic0" + j + ".png"  
 		}
 		oleft.onclick = function(){
-			if(j==1){
-				j = 3
+			if(j==4){
+				j = 14
 			}
 			else{
 				j--
 			}
-			oimg1.src = "images/pic0" + j + ".jpg"  
+			oimg1.src = "images/pic0" + j + ".png"  
 		}
 		var timer = null
-		var index = 0
+		var index = 4
 		function start() {
         if (timer == null) {
             timer = setInterval(plus, 3000);
         }
     }
     function plus() {
-        if(index == 3){
-			index = 0
+        if(index == 14){
+			index = 4
 		}
 		index++;
         console.log(index);
-        oimg1.src = "images/pic0" + index + ".jpg"  
+        oimg1.src = "images/pic0" + index + ".png"  
 		}
 		start()
 	</script>
