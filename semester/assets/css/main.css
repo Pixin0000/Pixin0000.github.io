@@ -1709,7 +1709,7 @@ input, select, textarea {
 			cursor: pointer;
 			font-size: 150%;
 			position: relative;
-			left:35%;
+			left:0%;
 			color: rgba(224,222,75,0.8);
 		}
 		#about img{
@@ -1739,3 +1739,40 @@ input, select, textarea {
 			cursor: pointer;
 			color: rgba(123, 246, 85, 0.6)
 		}
+		#goods img{
+			width:100%;
+			height:400px;
+		}
+		#goods p{
+			cursor: pointer;
+			font-size: 18px;
+		}
+		#goods p a{
+			cursor: pointer;
+			color: rgba(123, 246, 85, 0.6)
+		}
+		#equipment img{
+			width:100%;
+			height:400px;
+		}
+		#equipment p{
+			cursor: pointer;
+			font-size: 18px;
+		}
+		#equipment p a{
+			cursor: pointer;
+			color: rgba(123, 246, 85, 0.6)
+		}
+		#monster img{
+			width:100%;
+			height:400px;
+		}
+		#monster p{
+			cursor: pointer;
+			font-size: 18px;
+		}
+		#monster p a{
+			cursor: pointer;
+			color: rgba(123, 246, 85, 0.6)
+		}
+		

@@ -35,8 +35,8 @@
 			<nav id="nav">
 				<ul>
 					<li><a href="#intro">規則介紹</a></li>
-					<li><a href="#work">職業介紹</a></li>
-					<li><a href="#about" id='dog'>桌遊美術圖</a></li>
+					<li><a href="#work">卡牌介紹</a></li>
+					<li><a href="#about" id='dog'>卡牌美術圖</a></li>
 					<li><a href="#contact">相關資訊</a></li>
 				</ul>
 			</nav>
@@ -127,39 +127,41 @@
 				</p>
 			</article>
 			<article id="goods">
+				<img src="images/goods/pic000.jpg">
 				<p>
-					*	間諜：可指定1玩家，得知其戰力值1次。</br>
-*	礦工：可在礦場旁領取雙倍金幣1次。</br>
-*	優惠券：可在商店半價購買道具箱及裝備1次（可同時半價購買道具箱及裝備）。</br>
-*	傳送法陣：在自己與隊友存在位置1格內製造傳送法陣。自己或隊友可另外花費1回合傳送到另一端。</br>
-傳送法陣在使用一次後消失。</br>
-*	快速移動：該回合移動步數為擲出骰子的2倍。</br>
-*	竊賊：可指定1玩家，從該玩家手中抽取並獲得1裝備牌。</br>
+					<a>*間諜</a>：可指定1玩家，得知其戰力值1次。</br>
+					<a>*礦工</a>：可在礦場旁領取雙倍金幣1次。</br>
+					<a>*優惠券</a>：可在商店半價購買道具箱及裝備1次（可同時半價購買道具箱及裝備）。</br>
+					<a>*傳送法陣</a>：在自己與隊友存在位置1格內製造傳送法陣。自己或隊友可另外花費1回合傳送到另一端。
+					傳送法陣在使用一次後消失。</br>
+					<a>*快速移動</a>：該回合移動步數為擲出骰子的2倍。</br>
+					<a>*竊賊</a>：可指定1玩家，從該玩家手中抽取並獲得1裝備牌。</br>
 				</p>
 			</article>
 			<article id="equipment">
+				<img src="images/equipment/pic000.jpg">
 				<p>
-					*	匕首：戰力100，價錢100。</br>
-*	長劍：戰力200，價錢150。</br>
-*	盾：戰力300，價錢200。</br>
-*	斧頭：戰力450，價錢250。</br>
-*	十字弓：戰力600，價錢400。</br>
+					<a>*匕首</a>：戰力100，價錢100。</br>
+					<a>*長劍</a>：戰力200，價錢150。</br>
+					<a>*盾</a>：戰力300，價錢200。</br>
+					<a>*斧頭</a>：戰力450，價錢250。</br>
 				</p>
 			</article>
 			<article id="monster">
+				<img src="images/monster/pic000.jpg">
 				<p>
-					*	水精靈：戰力3000。</br>
-	獲得效果：遭到攻擊可觸發技能傳送到隊友旁一格內，且不受到傷害。</br>
-*	火精靈：戰力3000。</br>
+					<a>*水精靈</a>：戰力3000。</br>
+		獲得效果：遭到攻擊可觸發技能傳送到隊友旁一格內，且不受到傷害。</br>
+					<a>*火精靈</a>：戰力3000。</br>
 	獲得效果：生命值剩餘1時，戰力將會變為2倍。</br>
-*	風精靈：戰力3000。</br>
+					<a>*風精靈</a>：戰力3000。</br>
 	獲得效果：順移到任何位置。</br>
-*	地精靈：戰力3000。</br>
+					<a>*地精靈</a>：戰力3000。</br>
 	獲得效果：遭到攻擊時可免除所有傷害。</br>
-*	水元素：戰力800，獎勵金幣150。</br>
-*	火元素：戰力1200，獎勵金幣300。</br>
-*	風元素：戰力2000，增加戰力700。</br>
-*	地元素：戰力2400，增加戰力900。</br>
+					<a>*水元素</a>：戰力800，獎勵金幣150。</br>
+					<a>*火元素</a>：戰力1200，獎勵金幣300。</br>
+					<a>*風元素</a>：戰力2000，增加戰力700。</br>
+					<a>*地元素</a>：戰力2400，增加戰力900。</br>
 				</p>
 			</article>
 			<!-- About -->
@@ -488,6 +490,15 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		var pro = document.getElementById('profession')
 		var pro_a = pro.getElementsByTagName('a')
 		var pro_img = pro.getElementsByTagName('img')[0]
+		var goods = document.getElementById('goods')
+		var goods_a = goods.getElementsByTagName('a')
+		var goods_img = goods.getElementsByTagName('img')[0]
+		var equipment = document.getElementById('equipment')
+		var equipment_a = equipment.getElementsByTagName('a')
+		var equipment_img = equipment.getElementsByTagName('img')[0]
+		var monster = document.getElementById('monster')
+		var monster_a = monster.getElementsByTagName('a')
+		var monster_img = monster.getElementsByTagName('img')[0]
 		for (var i = 0; i <= 3; i++) {
 			oa[i].onmouseover = function () {
 				this.style.backgroundColor = 'rgba(255,0,255,0.6)';
@@ -563,11 +574,36 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			pro_a[i].index = i
 			pro_a[i].onmousemove = function(){
 				pro_img.src = 'images/profession/pic00' + this.index + '.jpg'
-				console.log(i)
 			}
 			pro_a[i].onclick = function(){
 				pro_img.src = 'images/profession/pic00' + this.index + '.jpg'
-				console.log(i)
+			}
+		}
+		for(var i=0;i<=5;i++){
+			goods_a[i].index = i
+			goods_a[i].onmousemove = function(){
+				goods_img.src = 'images/goods/pic00' + this.index + '.jpg'
+			}
+			goods_a[i].onclick = function(){
+				goods_img.src = 'images/goods/pic00' + this.index + '.jpg'
+			}
+		}
+		for(var i=0;i<=3;i++){
+			equipment_a[i].index = i
+			equipment_a[i].onmousemove = function(){
+				equipment_img.src = 'images/equipment/pic00' + this.index + '.jpg'
+			}
+			equipment_a[i].onclick = function(){
+				equipment_img.src = 'images/equipment/pic00' + this.index + '.jpg'
+			}
+		}
+		for(var i=0;i<=7;i++){
+			monster_a[i].index = i
+			monster_a[i].onmousemove = function(){
+				monster_img.src = 'images/monster/pic00' + this.index + '.jpg'
+			}
+			monster_a[i].onclick = function(){
+				monster_img.src = 'images/monster/pic00' + this.index + '.jpg'
 			}
 		}
 	</script>
