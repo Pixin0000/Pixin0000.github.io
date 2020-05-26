@@ -28,8 +28,8 @@
 			</div>
 			<div class="content">
 				<div class="inner">
-					<h2>【油油小丑】桌遊介紹</h2>
-					<p>來一場好玩的桌遊</p>
+					<h2>【油油小丑】</h2>
+					<p>職場實務桌遊試玩版</p>
 				</div>
 			</div>
 			<nav id="nav">
@@ -107,30 +107,48 @@
 			<article id="work">
 				<h2 class="major">Role</h2>
 				<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-			<span>職業卡牌 : </span></br>
-*	弓箭手：攻擊範圍從原本1格變為2格。遠程攻擊時戰力減為原本的一半。</br>
-*	牧師：自己與2格內的隊友受到攻擊時，降低敵人戰力20%。</br>
-*	占星者：在自己與隊友存在位置1格內製造傳送法陣。自己或隊友可另外花費1回合傳送到另一端。</br>
-傳送法陣在使用一次後消失。（技能有1回合冷卻時間）</br>
-*	騎士：移動步數為原本的雙倍。（技能有1回合冷卻時間）</br>
-*	巫師：施法使2格內敵人跳過1輪。（技能有3回合冷卻時間）</br>
-*	油油小丑：擲骰子決定職業效果。（技能有3回合冷卻時間）</br>
-<span>道具卡牌 : </span></br>
-*	間諜：可指定1玩家，得知其戰力值1次。</br>
+			<ul>
+				<li><a href="#profession">職業卡牌</a></li>
+				<li><a href="#goods">道具卡牌</a></li>
+				<li><a href="#equipment">裝備卡牌</a></li>
+				<li><a href="#monster">野怪</a></li>
+			</ul>
+			</article>
+			<article id="profession">
+				<img src="images/pic05.png">
+				<p>
+					<a>*弓箭手</a>：攻擊範圍從原本1格變為2格。遠程攻擊時戰力減為原本的一半。</br>
+					<a>*牧師</a>：自己與2格內的隊友受到攻擊時，降低敵人戰力20%。</br>
+					<a>*占星者</a>：在自己與隊友存在位置1格內製造傳送法陣。自己或隊友可另外花費1回合傳送到另一端。
+					傳送法陣在使用一次後消失。（技能有1回合冷卻時間）</br>
+					<a>*騎士</a>：移動步數為原本的雙倍。（技能有1回合冷卻時間）</br>
+					<a>*巫師</a>：施法使2格內敵人跳過1輪。（技能有3回合冷卻時間）</br>
+					<a>*油油小丑</a>：擲骰子決定職業效果。（技能有3回合冷卻時間）</br>
+				</p>
+			</article>
+			<article id="goods">
+				<p>
+					*	間諜：可指定1玩家，得知其戰力值1次。</br>
 *	礦工：可在礦場旁領取雙倍金幣1次。</br>
 *	優惠券：可在商店半價購買道具箱及裝備1次（可同時半價購買道具箱及裝備）。</br>
 *	傳送法陣：在自己與隊友存在位置1格內製造傳送法陣。自己或隊友可另外花費1回合傳送到另一端。</br>
 傳送法陣在使用一次後消失。</br>
 *	快速移動：該回合移動步數為擲出骰子的2倍。</br>
 *	竊賊：可指定1玩家，從該玩家手中抽取並獲得1裝備牌。</br>
-<span>裝備卡牌 : </span></br>
-*	匕首：戰力100，價錢100。</br>
+				</p>
+			</article>
+			<article id="equipment">
+				<p>
+					*	匕首：戰力100，價錢100。</br>
 *	長劍：戰力200，價錢150。</br>
 *	盾：戰力300，價錢200。</br>
 *	斧頭：戰力450，價錢250。</br>
 *	十字弓：戰力600，價錢400。</br>
-<span>野怪 : </span></br>
-*	水精靈：戰力3000。</br>
+				</p>
+			</article>
+			<article id="monster">
+				<p>
+					*	水精靈：戰力3000。</br>
 	獲得效果：遭到攻擊可觸發技能傳送到隊友旁一格內，且不受到傷害。</br>
 *	火精靈：戰力3000。</br>
 	獲得效果：生命值剩餘1時，戰力將會變為2倍。</br>
@@ -142,8 +160,8 @@
 *	火元素：戰力1200，獎勵金幣300。</br>
 *	風元素：戰力2000，增加戰力700。</br>
 *	地元素：戰力2400，增加戰力900。</br>
+				</p>
 			</article>
-
 			<!-- About -->
 			<article id="about">
 				<h2 class="major">art</h2>
@@ -465,10 +483,14 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		var oimg1 = oabout.getElementsByTagName('img')[0]
 		var owork = document.getElementById('work')
 		var oimg2 = owork.getElementsByTagName('img')[0]
+		var owork_ul = owork.getElementsByTagName('ul')[0]
+		var owork_a = owork_ul.getElementsByTagName('a')
+		var pro = document.getElementById('profession')
+		var pro_a = pro.getElementsByTagName('a')
+		var pro_img = pro.getElementsByTagName('img')[0]
 		for (var i = 0; i <= 3; i++) {
-			oa[i].style.backgroundColor = 'rgba(0,0,0,0.5)';
 			oa[i].onmouseover = function () {
-				this.style.backgroundColor = 'rgba(255,255,255,0.2)';
+				this.style.backgroundColor = 'rgba(255,0,255,0.6)';
 			}
 			oa[i].onmouseleave = function () {
 				this.style.backgroundColor = 'rgba(0,0,0,0.5)';
@@ -523,11 +545,31 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			oimg1.src = "images/pic0" + index + ".png"
 		}
 		index++;
-        console.log(index);
-		console.log(time)
         oimg1.src = "images/pic0" + index + ".png"  
 		}
 		start()
+		for(var i=0;i<=3;i++){
+		owork_a[i].onmousemove = function(){
+			console.log(1)
+			this.style.color = 'rgba(255,255,255,0.8)'
+		}
+		}
+		for(var i=0;i<=3;i++){
+		owork_a[i].onmouseout = function(){
+			this.style.color = 'rgba(224, 222, 75,0.8)'
+		}
+		}
+		for(var i=0;i<=5;i++){
+			pro_a[i].index = i
+			pro_a[i].onmousemove = function(){
+				pro_img.src = 'images/profession/pic00' + this.index + '.jpg'
+				console.log(i)
+			}
+			pro_a[i].onclick = function(){
+				pro_img.src = 'images/profession/pic00' + this.index + '.jpg'
+				console.log(i)
+			}
+		}
 	</script>
 
 </body>

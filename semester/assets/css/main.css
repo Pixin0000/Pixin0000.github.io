@@ -1674,6 +1674,9 @@ input, select, textarea {
 		.inner p{
 			color:rgba(3, 248, 228, 0.8);
 		}
+		#nav ul li a{
+			background-color: rgba(19, 21, 25, 0.7);
+		}
 		#intro{
 			width:1000px;
 		}
@@ -1699,6 +1702,16 @@ input, select, textarea {
 			position:relative;
 			top:250px;
 		}
+		#work ul li{
+			list-style: none;
+		}
+		#work ul li a{
+			cursor: pointer;
+			font-size: 150%;
+			position: relative;
+			left:35%;
+			color: rgba(224,222,75,0.8);
+		}
 		#about img{
 			float: none;
 			width:100%;
@@ -1713,4 +1726,16 @@ input, select, textarea {
 			position:relative;
 			top:-200px;
 			left:84.5%;
+		}
+		#profession img{
+			width:100%;
+			height:400px;
+		}
+		#profession p{
+			cursor: pointer;
+			font-size: 18px;
+		}
+		#profession p a{
+			cursor: pointer;
+			color: rgba(123, 246, 85, 0.6)
 		}
