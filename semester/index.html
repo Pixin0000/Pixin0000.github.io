@@ -115,7 +115,7 @@
 			</ul>
 			</article>
 			<article id="profession">
-				<img src="images/pic02.jpg">
+				<img src="images/profession/pic000.jpg">
 				<p>
 					<a>*弓箭手</a>：攻擊範圍從原本1格變為2格。遠程攻擊時戰力減為原本的一半。</br>
 					<a>*牧師</a>：自己與2格內的隊友受到攻擊時，降低敵人戰力20%。</br>
@@ -603,18 +603,28 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			equipment_a[i].index = i
 			equipment_a[i].onmousemove = function(){
 				equipment_img.src = 'images/equipment/pic00' + this.index + '.jpg'
+				this.style.color = 'rgba(156,255,255,0.8)'
 			}
 			equipment_a[i].onclick = function(){
 				equipment_img.src = 'images/equipment/pic00' + this.index + '.jpg'
+				this.style.color = 'rgba(156,255,255,0.8)'
+			}
+			equipment_a[i].onmouseleave = function(){
+				this.style.color = 'rgba(123, 246, 85, 0.6)'
 			}
 		}
 		for(var i=0;i<=7;i++){
 			monster_a[i].index = i
 			monster_a[i].onmousemove = function(){
 				monster_img.src = 'images/monster/pic00' + this.index + '.jpg'
+				this.style.color = 'rgba(156,255,255,0.8)'
 			}
 			monster_a[i].onclick = function(){
 				monster_img.src = 'images/monster/pic00' + this.index + '.jpg'
+				this.style.color = 'rgba(156,255,255,0.8)'
+			}
+			monster_a[i].onmouseleave = function(){
+				this.style.color = 'rgba(123, 246, 85, 0.6)'
 			}
 		}
 	</script>
