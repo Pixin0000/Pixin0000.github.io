@@ -115,7 +115,7 @@
 			</ul>
 			</article>
 			<article id="profession">
-				<img src="images/pic05.png">
+				<img src="images/pic02.jpg">
 				<p>
 					<a>*弓箭手</a>：攻擊範圍從原本1格變為2格。遠程攻擊時戰力減為原本的一半。</br>
 					<a>*牧師</a>：自己與2格內的隊友受到攻擊時，降低敵人戰力20%。</br>
@@ -168,7 +168,7 @@
 			<article id="about">
 				<h2 class="major">art</h2>
 				<span class="image main">
-				<img src="images/pic04.png" alt="" />
+				<img src="images/arts/pic04.png" alt="" />
 				<i class="fas fa-3x fa-angle-left" id="left"></i>
 				<i class="fa fa-3x fa-angle-right" id="right"></i>
 			</span>
@@ -179,6 +179,7 @@
 			<!-- Contact -->
 			<article id="contact">
 				<h2 class="major">about</h2>
+				<img src="images/pic03.jpg">
 				<p>
 					價格:未定價</br>
 					聯絡資訊:</br>
@@ -543,7 +544,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 				index++
 			}
 			time = 0
-			oimg1.src = "images/pic0" + index + ".png"
+			oimg1.src = "images/arts/pic0" + index + ".png"
 		}
 		oleft.onclick = function(){
 			if(index==4){
@@ -553,10 +554,10 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 				index--
 			}
 			time = 0
-			oimg1.src = "images/pic0" + index + ".png"
+			oimg1.src = "images/arts/pic0" + index + ".png"
 		}
 		index++;
-        oimg1.src = "images/pic0" + index + ".png"  
+        oimg1.src = "images/arts/pic0" + index + ".png"  
 		}
 		start()
 		for(var i=0;i<=3;i++){
@@ -574,18 +575,28 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			pro_a[i].index = i
 			pro_a[i].onmousemove = function(){
 				pro_img.src = 'images/profession/pic00' + this.index + '.jpg'
+				this.style.color = 'rgba(156,255,255,0.8)'
 			}
 			pro_a[i].onclick = function(){
 				pro_img.src = 'images/profession/pic00' + this.index + '.jpg'
+				this.style.color = 'rgba(156,255,255,0.8)'
+			}
+			pro_a[i].onmouseleave = function(){
+				this.style.color = 'rgba(123, 246, 85, 0.6)'
 			}
 		}
 		for(var i=0;i<=5;i++){
 			goods_a[i].index = i
 			goods_a[i].onmousemove = function(){
 				goods_img.src = 'images/goods/pic00' + this.index + '.jpg'
+				this.style.color = 'rgba(156,255,255,0.8)'
 			}
 			goods_a[i].onclick = function(){
 				goods_img.src = 'images/goods/pic00' + this.index + '.jpg'
+				this.style.color = 'rgba(156,255,255,0.8)'
+			}
+			goods_a[i].onmouseleave = function(){
+				this.style.color = 'rgba(123, 246, 85, 0.6)'
 			}
 		}
 		for(var i=0;i<=3;i++){
