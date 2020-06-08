@@ -7,7 +7,7 @@
 <html>
 
 <head>
-	<title>桌遊名稱</title>
+	<title>油油小丑</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
@@ -28,16 +28,16 @@
 			</div>
 			<div class="content">
 				<div class="inner">
-					<h1>桌遊介紹</h1>
-					<p>開始玩你的第一款桌遊吧!</p>
+					<h2>【油油小丑】</h2>
+					<p>職場實務桌遊試玩版</p>
 				</div>
 			</div>
 			<nav id="nav">
 				<ul>
 					<li><a href="#intro">規則介紹</a></li>
-					<li><a href="#work">實際遊玩</a></li>
-					<li><a href="#about">相關資訊</a></li>
-					<li><a href="#contact">產品回饋</a></li>
+					<li><a href="#work">卡牌介紹</a></li>
+					<li><a href="#about" id='dog'>卡牌美術圖</a></li>
+					<li><a href="#contact">相關資訊</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -77,7 +77,7 @@
 1.	礦場：每輪生成50金幣，可累積。</br>
 2.	商店：可使用金幣購買道具箱或裝備。購買裝備後持有該裝備牌，不須公開。</br>
 	購買道具箱隨機抽取1道具牌並持有，不須公開。</br>
-3.	職業：在地圖中心獲得，抽出職業牌後不須公開。</br>
+<!-- 3.	職業：在地圖中心獲得，抽出職業牌後不須公開。</br>
 4.	弓箭手：攻擊範圍從原本1格變為2格。</br>
 5.	牧師：自己與2格內的隊友受到攻擊時，降低敵人戰力20%。</br>
 6.	占星者：在自己與隊友存在位置1格內製造傳送站。</br>
@@ -99,55 +99,110 @@
 18.	奪取敵人道具：可指定1玩家，從該玩家手中抽取並獲得1裝備牌。</br>
 6.	野怪</br>
 </p>
-			</article>
+-->	
+
+</article>
 
 			<!-- Work -->
 			<article id="work">
-				<h2 class="major">Work</h2>
+				<h2 class="major">Role</h2>
 				<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-				<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac.
-					Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer
-					sollicitudin mauris nec lorem luctus ultrices.</p>
-				<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna
-					sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas
-					laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat
-					tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat
-					tempus.</p>
+			<ul>
+				<li><a href="#profession">職業卡牌</a></li>
+				<li><a href="#goods">道具卡牌</a></li>
+				<li><a href="#equipment">裝備卡牌</a></li>
+				<li><a href="#monster">野怪</a></li>
+			</ul>
 			</article>
-
+			<article id="profession">
+				<img src="images/profession/pic000.jpg">
+				<p>
+					<a>*弓箭手</a>：攻擊範圍從原本1格變為2格。遠程攻擊時戰力減為原本的一半。</br>
+					<a>*牧師</a>：自己與2格內的隊友受到攻擊時，降低敵人戰力20%。</br>
+					<a>*占星者</a>：在自己與隊友存在位置1格內製造傳送法陣。自己或隊友可另外花費1回合傳送到另一端。
+					傳送法陣在使用一次後消失。（技能有1回合冷卻時間）</br>
+					<a>*騎士</a>：移動步數為原本的雙倍。（技能有1回合冷卻時間）</br>
+					<a>*巫師</a>：施法使2格內敵人跳過1輪。（技能有3回合冷卻時間）</br>
+					<a>*油油小丑</a>：擲骰子決定職業效果。（技能有3回合冷卻時間）</br>
+				</p>
+			</article>
+			<article id="goods">
+				<img src="images/goods/pic000.jpg">
+				<p>
+					<a>*間諜</a>：可指定1玩家，得知其戰力值1次。</br>
+					<a>*礦工</a>：可在礦場旁領取雙倍金幣1次。</br>
+					<a>*優惠券</a>：可在商店半價購買道具箱及裝備1次（可同時半價購買道具箱及裝備）。</br>
+					<a>*傳送法陣</a>：在自己與隊友存在位置1格內製造傳送法陣。自己或隊友可另外花費1回合傳送到另一端。
+					傳送法陣在使用一次後消失。</br>
+					<a>*快速移動</a>：該回合移動步數為擲出骰子的2倍。</br>
+					<a>*竊賊</a>：可指定1玩家，從該玩家手中抽取並獲得1裝備牌。</br>
+				</p>
+			</article>
+			<article id="equipment">
+				<img src="images/equipment/pic000.jpg">
+				<p>
+					<a>*匕首</a>：戰力100，價錢100。</br>
+					<a>*長劍</a>：戰力200，價錢150。</br>
+					<a>*盾</a>：戰力300，價錢200。</br>
+					<a>*斧頭</a>：戰力450，價錢250。</br>
+				</p>
+			</article>
+			<article id="monster">
+				<img src="images/monster/pic000.jpg">
+				<p>
+					<a>*水精靈</a>：戰力3000。</br>
+		獲得效果：遭到攻擊可觸發技能傳送到隊友旁一格內，且不受到傷害。</br>
+					<a>*火精靈</a>：戰力3000。</br>
+	獲得效果：生命值剩餘1時，戰力將會變為2倍。</br>
+					<a>*風精靈</a>：戰力3000。</br>
+	獲得效果：順移到任何位置。</br>
+					<a>*地精靈</a>：戰力3000。</br>
+	獲得效果：遭到攻擊時可免除所有傷害。</br>
+					<a>*水元素</a>：戰力800，獎勵金幣150。</br>
+					<a>*火元素</a>：戰力1200，獎勵金幣300。</br>
+					<a>*風元素</a>：戰力2000，增加戰力700。</br>
+					<a>*地元素</a>：戰力2400，增加戰力900。</br>
+				</p>
+			</article>
 			<!-- About -->
 			<article id="about">
-				<h2 class="major">About</h2>
-				<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-				<p>
-					價格:</br>
-					聯絡資訊:</br>
-					</br>
-					製作人員:</br>
-					組長+企劃:劉茂德</br>
-					美術圖設計:王鵬維、林建宏</br>
-					簡報級報告負責製作:何一凡</br>
-					實體道具製作:蕭瑀陞</br>
-					網頁製作:胡歆</br>
-
-				</p>
-				<ul class="icons">
-					<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li> -->
-					<li><a href="https://github.com/Pixin0000/pixin0000.github.io" class="icon brands fa-github"
-							target=_blank></a></li>
-					<li><a href="https://shopee.tw/user/account/profile/" class="fas fa-shopping-cart"
-							target=_blank></a></li>
-				</ul>
+				<h2 class="major">art</h2>
+				<span class="image main">
+				<img src="images/arts/pic04.png" alt="" />
+				<i class="fas fa-3x fa-angle-left" id="left"></i>
+				<i class="fa fa-3x fa-angle-right" id="right"></i>
+			</span>
+			
+				
 			</article>
 
 			<!-- Contact -->
 			<article id="contact">
-				<h2 class="major">FeedBack</h2>
-				<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdyRVni7g8syIhW2hfgX-w3KlXXZXs2p8m6Krod0XIeIWNEHg/viewform?embedded=true"
-				>正在加载…</iframe>
+				<h2 class="major">about</h2>
+				<img src="images/pic03.jpg">
+				<p>
+					價格:未定價</br>
+					聯絡資訊:</br>
+					</br>
+					製作人員:</br>
+					組長及報告 : 何一凡</br>
+					企劃 : 劉茂德</br>
+					美術圖設計 : 王鵬維、林建宏</br>
+					實體道具製作 : 蕭禹陞</br>
+					網頁製作 : 胡歆</br>
+					<a href="https://docs.google.com/forms/d/e/1FAIpQLSdyRVni7g8syIhW2hfgX-w3KlXXZXs2p8m6Krod0XIeIWNEHg/viewform?usp=sf_link">Google表單點我</a>(給我們點意見QQ)
+
+					<ul class="icons">
+						<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li> -->
+						<li><a href="https://github.com/" class="icon brands fa-github"
+								target=_blank></a></li>
+						<li><a href="https://shopee.tw/user/account/profile/" class="fas fa-shopping-cart"
+								target=_blank></a></li>
+					</ul>
+				</p>
 			</article>
 
 			<!-- Elements -->
@@ -424,11 +479,30 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		var oactions = document.getElementsByClassName('actions');
 		var obt = document.getElementsByClassName('primary')[0];
 		var oreset = document.getElementById('reset');
-
+		var oright = document.getElementById('right')
+		var oleft = document.getElementById('left')
+		var oabout = document.getElementById("about")
+		var oi = oabout.getElementsByTagName('i')[0]
+		var oimg1 = oabout.getElementsByTagName('img')[0]
+		var owork = document.getElementById('work')
+		var oimg2 = owork.getElementsByTagName('img')[0]
+		var owork_ul = owork.getElementsByTagName('ul')[0]
+		var owork_a = owork_ul.getElementsByTagName('a')
+		var pro = document.getElementById('profession')
+		var pro_a = pro.getElementsByTagName('a')
+		var pro_img = pro.getElementsByTagName('img')[0]
+		var goods = document.getElementById('goods')
+		var goods_a = goods.getElementsByTagName('a')
+		var goods_img = goods.getElementsByTagName('img')[0]
+		var equipment = document.getElementById('equipment')
+		var equipment_a = equipment.getElementsByTagName('a')
+		var equipment_img = equipment.getElementsByTagName('img')[0]
+		var monster = document.getElementById('monster')
+		var monster_a = monster.getElementsByTagName('a')
+		var monster_img = monster.getElementsByTagName('img')[0]
 		for (var i = 0; i <= 3; i++) {
-			oa[i].style.backgroundColor = 'rgba(0,0,0,0.5)';
 			oa[i].onmouseover = function () {
-				this.style.backgroundColor = 'rgba(255,255,255,0.2)';
+				this.style.backgroundColor = 'rgba(255,0,255,0.6)';
 			}
 			oa[i].onmouseleave = function () {
 				this.style.backgroundColor = 'rgba(0,0,0,0.5)';
@@ -438,7 +512,121 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			alert('發送成功');
 			oreset.focus();
 		}
+		var j = 4
+		var clientwidth = document.documentElement.clientWidth
 
+		for(var i=0;i<=3;i++){
+		oa[i].onclick = function(){
+		if(clientwidth > 500){
+			oright.style.left = "92.5%"
+			oimg1.style.height = "600px"
+			oimg2.style.height = "500px"
+		
+		}}}
+		var timer = null
+		var index = 4
+		function start() {
+			time = 3000
+        if (timer == null) {
+            timer = setInterval(plus, time);
+        }
+    }
+    function plus() {
+		time = 0
+        if(index == 14){
+			index = 4
+		}
+		oright.onclick = function(){
+			if(index==14){
+				index = 4
+			}
+			else{
+				index++
+			}
+			time = 0
+			oimg1.src = "images/arts/pic0" + index + ".png"
+		}
+		oleft.onclick = function(){
+			if(index==4){
+				index = 14
+			}
+			else{
+				index--
+			}
+			time = 0
+			oimg1.src = "images/arts/pic0" + index + ".png"
+		}
+		index++;
+        oimg1.src = "images/arts/pic0" + index + ".png"  
+		}
+		start()
+		for(var i=0;i<=3;i++){
+		owork_a[i].onmousemove = function(){
+			console.log(1)
+			this.style.color = 'rgba(255,255,255,0.8)'
+		}
+		}
+		for(var i=0;i<=3;i++){
+		owork_a[i].onmouseout = function(){
+			this.style.color = 'rgba(224, 222, 75,0.8)'
+		}
+		}
+		for(var i=0;i<=5;i++){
+			pro_a[i].index = i
+			pro_a[i].onmousemove = function(){
+				pro_img.src = 'images/profession/pic00' + this.index + '.jpg'
+				this.style.color = 'rgba(156,255,255,0.8)'
+			}
+			pro_a[i].onclick = function(){
+				pro_img.src = 'images/profession/pic00' + this.index + '.jpg'
+				this.style.color = 'rgba(156,255,255,0.8)'
+			}
+			pro_a[i].onmouseleave = function(){
+				this.style.color = 'rgba(123, 246, 85, 0.6)'
+			}
+		}
+		for(var i=0;i<=5;i++){
+			goods_a[i].index = i
+			goods_a[i].onmousemove = function(){
+				goods_img.src = 'images/goods/pic00' + this.index + '.jpg'
+				this.style.color = 'rgba(156,255,255,0.8)'
+			}
+			goods_a[i].onclick = function(){
+				goods_img.src = 'images/goods/pic00' + this.index + '.jpg'
+				this.style.color = 'rgba(156,255,255,0.8)'
+			}
+			goods_a[i].onmouseleave = function(){
+				this.style.color = 'rgba(123, 246, 85, 0.6)'
+			}
+		}
+		for(var i=0;i<=3;i++){
+			equipment_a[i].index = i
+			equipment_a[i].onmousemove = function(){
+				equipment_img.src = 'images/equipment/pic00' + this.index + '.jpg'
+				this.style.color = 'rgba(156,255,255,0.8)'
+			}
+			equipment_a[i].onclick = function(){
+				equipment_img.src = 'images/equipment/pic00' + this.index + '.jpg'
+				this.style.color = 'rgba(156,255,255,0.8)'
+			}
+			equipment_a[i].onmouseleave = function(){
+				this.style.color = 'rgba(123, 246, 85, 0.6)'
+			}
+		}
+		for(var i=0;i<=7;i++){
+			monster_a[i].index = i
+			monster_a[i].onmousemove = function(){
+				monster_img.src = 'images/monster/pic00' + this.index + '.jpg'
+				this.style.color = 'rgba(156,255,255,0.8)'
+			}
+			monster_a[i].onclick = function(){
+				monster_img.src = 'images/monster/pic00' + this.index + '.jpg'
+				this.style.color = 'rgba(156,255,255,0.8)'
+			}
+			monster_a[i].onmouseleave = function(){
+				this.style.color = 'rgba(123, 246, 85, 0.6)'
+			}
+		}
 	</script>
 
 </body>
