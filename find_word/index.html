@@ -15,7 +15,7 @@
             width: 800px;
             height: 150%;
             margin: 100px;
-            margin-left: 30%;
+            margin-left: 20%;
             border: gray solid 1px;
             position: relative;
         }
@@ -131,6 +131,7 @@
             var br = '<br />'
             var a = otext3.value.split(' ').join(br)
             if(ev.keyCode == 13){
+                ocontent.innerHTML = '';
                 ocontent.innerHTML += '<br />'
                 ocontent.innerHTML += a;
             }

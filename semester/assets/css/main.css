@@ -1674,6 +1674,9 @@ input, select, textarea {
 		.inner p{
 			color:rgba(3, 248, 228, 0.8);
 		}
+		#nav ul li a{
+			background-color: rgba(19, 21, 25, 0.7);
+		}
 		#intro{
 			width:1000px;
 		}
@@ -1684,3 +1687,96 @@ input, select, textarea {
 		#intro span{
 			color:rgb(192, 177, 39);
 		}
+		#intro image{
+			height:10%;
+		}
+		#work span{
+			color:rgb(192, 177, 39);
+			position:center;}
+		#work img{
+			height:400px;
+		}
+		#about i{
+			size:10px;
+			color:rgba(121, 8, 226, 0.815);
+			position:relative;
+			top:250px;
+		}
+		#work ul li{
+			list-style: none;
+		}
+		#work ul li a{
+			cursor: pointer;
+			font-size: 150%;
+			position: relative;
+			left:0%;
+			color: rgba(224,222,75,0.8);
+		}
+		#about img{
+			float: none;
+			width:100%;
+			height:400px;
+		}
+		#about #left{
+			position:relative;
+			top:-200px;
+			left:0px;
+		}
+		#about #right{
+			position:relative;
+			top:-200px;
+			left:84.5%;
+		}
+		#profession img{
+			width:100%;
+			height:400px;
+		}
+		#profession p{
+			cursor: pointer;
+			font-size: 18px;
+		}
+		#profession p a{
+			cursor: pointer;
+			color: rgba(123, 246, 85, 0.6)
+		}
+		#goods img{
+			width:100%;
+			height:400px;
+		}
+		#goods p{
+			cursor: pointer;
+			font-size: 18px;
+		}
+		#goods p a{
+			cursor: pointer;
+			color: rgba(123, 246, 85, 0.6)
+		}
+		#equipment img{
+			width:100%;
+			height:400px;
+		}
+		#equipment p{
+			cursor: pointer;
+			font-size: 18px;
+		}
+		#equipment p a{
+			cursor: pointer;
+			color: rgba(123, 246, 85, 0.6)
+		}
+		#monster img{
+			width:100%;
+			height:400px;
+		}
+		#monster p{
+			cursor: pointer;
+			font-size: 18px;
+		}
+		#monster p a{
+			cursor: pointer;
+			color: rgba(123, 246, 85, 0.6)
+		}
+		#contact img{
+			width: 100%;
+			height: 400px;
+		}
+		
