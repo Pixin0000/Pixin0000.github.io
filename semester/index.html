@@ -118,7 +118,7 @@
 				<img src="images/profession/pic000.jpg">
 				<p>
 					<a>*弓箭手</a>：攻擊範圍從原本1格變為2格。遠程攻擊時戰力減為原本的一半。</br>
-					<a>*牧師</a>：自己與2格內的隊友受到攻擊時，降低敵人戰力20%。</br>
+					<a>*牧師</a>：自己與2格內的隊友受到攻擊時，降低敵人戰力25%。</br>
 					<a>*占星者</a>：在自己與隊友存在位置1格內製造傳送法陣。自己或隊友可另外花費1回合傳送到另一端。
 					傳送法陣在使用一次後消失。（技能有1回合冷卻時間）</br>
 					<a>*騎士</a>：移動步數為原本的雙倍。（技能有1回合冷卻時間）</br>
@@ -180,9 +180,8 @@
 			<article id="contact">
 				<h2 class="major">about</h2>
 				<img src="images/pic03.jpg">
-				<p>
-					價格:未定價</br>
-					聯絡資訊:</br>
+					價格:300(shopee)</br>
+					聯絡資訊:1072b0021@ntut.edu.tw</br>
 					</br>
 					製作人員:</br>
 					組長及報告 : 何一凡</br>
@@ -197,9 +196,9 @@
 										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
 										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 										<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li> -->
-						<li><a href="https://github.com/" class="icon brands fa-github"
+						<li><a href="https://github.com/Pixin0000" class="icon brands fa-github"
 								target=_blank></a></li>
-						<li><a href="https://shopee.tw/user/account/profile/" class="fas fa-shopping-cart"
+						<li><a href="https://shopee.tw/product/21931560/5037072460/" class="fas fa-shopping-cart"
 								target=_blank></a></li>
 					</ul>
 				</p>
@@ -524,7 +523,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		
 		}}}
 		var timer = null
-		var index = 4
+		var index = 1
 		function start() {
 			time = 3000
         if (timer == null) {
@@ -533,12 +532,12 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
     }
     function plus() {
 		time = 0
-        if(index == 14){
-			index = 4
+        if(index == 6){
+			index = 0
 		}
 		oright.onclick = function(){
-			if(index==14){
-				index = 4
+			if(index == 6){
+				index = 1
 			}
 			else{
 				index++
@@ -547,8 +546,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			oimg1.src = "images/arts/pic0" + index + ".png"
 		}
 		oleft.onclick = function(){
-			if(index==4){
-				index = 14
+			if(index==1){
+				index = 6
 			}
 			else{
 				index--
@@ -559,6 +558,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		index++;
         oimg1.src = "images/arts/pic0" + index + ".png"  
 		}
+
 		start()
 		for(var i=0;i<=3;i++){
 		owork_a[i].onmousemove = function(){
