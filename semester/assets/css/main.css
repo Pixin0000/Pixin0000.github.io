@@ -1779,4 +1779,10 @@ input, select, textarea {
 			width: 100%;
 			height: 400px;
 		}
+		#contact .title{
+			font-size: 26px;
+			background: linear-gradient(to right, red, orange, yellow, green, yellow, orange, red, orange, yellow, green, yellow, orange, red);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+		}
 		
